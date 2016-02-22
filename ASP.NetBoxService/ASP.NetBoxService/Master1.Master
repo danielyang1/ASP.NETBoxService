@@ -1,0 +1,51 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Master1.master.cs" Inherits="ASP.NetBoxService.Master1" Debug="" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .auto-style1 {
+            width: 100%;
+        }
+        body{
+            background-color:darkred;
+        }
+        .auto-style2 {
+            height: 23px;
+        }
+        .auto-style3 {
+        }
+    </style>
+</head>
+<body>
+ <form id="form1" runat="server">
+ <div id="topContent">
+ <a href="Default.aspx">Master Pages Tutorials</a>
+ </div>
+ 
+ <div id="mainContent">
+ <asp:ContentPlaceHolder id="MainContent" runat="server">
+ </asp:ContentPlaceHolder>
+ </div>
+ 
+ <div id="leftContent">
+ <h3>Lessons</h3>    
+ <ul>
+ <li>TODO</li>
+ </ul>
+ <h3>News</h3>    
+ <ul>
+ <li>TODO</li>
+ </ul>
+ </div>
+ 
+ <div id="footerContent">
+ </div>
+ </form>
+</body>
+</html>
