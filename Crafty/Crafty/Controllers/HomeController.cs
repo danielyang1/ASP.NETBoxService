@@ -33,5 +33,12 @@ namespace Crafty.Controllers
 
             return View();
         }
+
+        public ActionResult Products()
+        {
+            ViewBag.Message = "Products page.";
+
+            return View();
+        }
     }
 }

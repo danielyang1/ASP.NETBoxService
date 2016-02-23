@@ -224,6 +224,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Admin\AdminPage.aspx" />
+    <Content Include="App_Data\SurveyDatabase.mdf" />
+    <Content Include="App_Data\SurveyDatabase_log.ldf">
+      <DependentUpon>SurveyDatabase.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
@@ -286,10 +290,9 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Home\Survey.cshtml" />
+    <Content Include="Views\Home\Products.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />

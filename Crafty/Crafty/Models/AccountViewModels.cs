@@ -81,6 +81,14 @@ namespace Crafty.Models
         public string ConfirmPassword { get; set; }
     }
 
+    public class SurveyViewModel
+    {
+        [Required]
+        [Display(Name = "First Question")]
+        [StringLength(100, ErrorMessage = "You need to submit something lalalalala.", MinimumLength = 6)]
+        public int FirstQuestion { get; set; }
+    }
+
     public class ResetPasswordViewModel
     {
         [Required]
