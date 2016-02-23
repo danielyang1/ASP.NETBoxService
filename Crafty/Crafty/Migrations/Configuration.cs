@@ -23,8 +23,8 @@ namespace Crafty.Migrations
 
               context.RegisteredUsers.AddOrUpdate(
                 p => p.name,
-                new RegisteredUser { name = "Eazy=E", address = "Compton", subscriptionCost = 500, totalSubscriptionCost = 1000},
-                new RegisteredUser { name = "test", address = "333 Plankinton", subscriptionCost = 800, totalSubscriptionCost = 2000 }
+                new RegisteredUser { name = "Eazy=E", address = "Compton", subscriptionCost = 500, totalSubscriptionCost = 1000, productDemographic = "Wine"},
+                new RegisteredUser { name = "test", address = "333 Plankinton", subscriptionCost = 800, totalSubscriptionCost = 2000, productDemographic = "Wine"}
               );
 
         }

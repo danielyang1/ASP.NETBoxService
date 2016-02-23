@@ -228,6 +228,10 @@
     <Compile Include="Migrations\201602231959405_RegisteredUserDBContext.Designer.cs">
       <DependentUpon>201602231959405_RegisteredUserDBContext.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201602232110553_productDemographic.cs" />
+    <Compile Include="Migrations\201602232110553_productDemographic.Designer.cs">
+      <DependentUpon>201602232110553_productDemographic.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -317,6 +321,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201602231959405_RegisteredUserDBContext.resx">
       <DependentUpon>201602231959405_RegisteredUserDBContext.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602232110553_productDemographic.resx">
+      <DependentUpon>201602232110553_productDemographic.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
