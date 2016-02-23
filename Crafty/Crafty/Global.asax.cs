@@ -21,6 +21,7 @@ namespace Crafty
             RoleActions roleActions = new RoleActions();
             roleActions.AddUserAndRole();
 
+            System.Data.Entity.Database.SetInitializer(new System.Data.Entity.DropCreateDatabaseIfModelChanges<Crafty.Models.RegisteredUserDBContext>());
         }
     }
 }

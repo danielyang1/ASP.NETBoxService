@@ -205,6 +205,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\RegisteredUsersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -215,19 +216,33 @@
     <Compile Include="MasterPage.Master.designer.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201602231817026_Initial.cs" />
+    <Compile Include="Migrations\201602231817026_Initial.Designer.cs">
+      <DependentUpon>201602231817026_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201602231950382_InitialCreate.cs" />
+    <Compile Include="Migrations\201602231950382_InitialCreate.Designer.cs">
+      <DependentUpon>201602231950382_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201602231959405_RegisteredUserDBContext.cs" />
+    <Compile Include="Migrations\201602231959405_RegisteredUserDBContext.Designer.cs">
+      <DependentUpon>201602231959405_RegisteredUserDBContext.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201602232110553_productDemographic.cs" />
+    <Compile Include="Migrations\201602232110553_productDemographic.Designer.cs">
+      <DependentUpon>201602232110553_productDemographic.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\RoleActions.cs" />
+    <Compile Include="Models\SurveyModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Admin\AdminPage.aspx" />
-    <Content Include="App_Data\SurveyDatabase.mdf" />
-    <Content Include="App_Data\SurveyDatabase_log.ldf">
-      <DependentUpon>SurveyDatabase.mdf</DependentUpon>
-    </Content>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
@@ -291,8 +306,26 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Home\Survey.cshtml" />
     <Content Include="Views\Home\Products.cshtml" />
+    <Content Include="Views\RegisteredUsers\Create.cshtml" />
+    <Content Include="Views\RegisteredUsers\Delete.cshtml" />
+    <Content Include="Views\RegisteredUsers\Details.cshtml" />
+    <Content Include="Views\RegisteredUsers\Edit.cshtml" />
+    <Content Include="Views\RegisteredUsers\Index.cshtml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201602231817026_Initial.resx">
+      <DependentUpon>201602231817026_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602231950382_InitialCreate.resx">
+      <DependentUpon>201602231950382_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602231959405_RegisteredUserDBContext.resx">
+      <DependentUpon>201602231959405_RegisteredUserDBContext.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602232110553_productDemographic.resx">
+      <DependentUpon>201602232110553_productDemographic.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -303,6 +336,9 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

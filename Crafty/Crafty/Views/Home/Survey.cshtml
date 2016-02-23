@@ -9,38 +9,38 @@
     <form id="surveyForm">
         
 
-        <p>Who are you? <asp:TextBox ID="WhoTextBox" runat="server" /></p>                              <!-- cannot use asp.net attributes, must be HTML textbox-->
+        @*<p>Who are you? <asp:TextBox ID="WhoTextBox" runat="server" /></p>                               cannot use asp.net attributes, must be HTML textbox
 
         <p>Your email: <asp:TextBox ID="EmailTextBox" runat="server" /></p>
 
-        <p>Type in your favorite color: <asp:TextBox ID="ColorQuestionTextBox" runat="server"></asp:TextBox></p>
+        <p>Type in your favorite color: <asp:TextBox ID="ColorQuestionTextBox" runat="server"></asp:TextBox></p>*@
 
-        <h3>
-            1. Where do you live:</h3><br />
+        <br /><h3>
+            1. Where do you live:</h3>
         <h5>
             <input type="radio" name="northern" value="northern" />Northern Hemisphere<br />
-            <input type="radio" name="souther" value="southern"/>Souther Hemisphere<br />
+            <input type="radio" name="southern" value="southern"/>Southern Hemisphere<br />
         </h5>
 
         <h3>
-            2. What type of drink do you like?</h3><br />
+            2. What type of drink do you like?</h3>
         @*<div>@Html.PasswordFor(m => m.FirstQuestion, new { @class = "asfdds" })</div>*@
         <h5>
-            <input type="radio" name="vodka" value="vodka" />Vodka
-            <input type="radio" name="beer" value="beer"/>Beer
-            </h5>
+            <input type="radio" name="vodka" value="vodka" /> Vodka<br />
+            <input type="radio" name="beer" value="beer"/> Beer<br />
+        </h5>
 
         <h3>
-            3. Would you rather attend a raging Berlin night club or a lavish Paris art gallery?</h3><br />
+            3. Would you rather attend a raging Berlin night club or a lavish Paris art gallery?</h3>
         <h5>
-            <input type="radio" name="asdfdsfdsafs" value="Berlin" /> Berlinasdfdsafdsa<br />
-            <input type="radio" name="dafdsfasdfsdf" value="Paris" /> Parisdasfsdfsadf<br/>
-
+            <input type="radio" name="berlin" value="berlin" /> Berlin<br />
+            <input type="radio" name="berlin" value="paris" /> Paris<br/>
         </h5>
 
         <h3>
             Sexual activity and such
         </h3>
+
         <h5>
             <!-- radio buttons and stuff here-->
         </h5>

@@ -22,7 +22,7 @@ namespace Crafty.Controllers
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "We want your feedback!";
 
             return View();
         }
