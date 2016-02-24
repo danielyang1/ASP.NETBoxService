@@ -217,32 +217,18 @@
     <Compile Include="MasterPage.Master.designer.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201602231817026_Initial.cs" />
-    <Compile Include="Migrations\201602231817026_Initial.Designer.cs">
-      <DependentUpon>201602231817026_Initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201602231950382_InitialCreate.cs" />
-    <Compile Include="Migrations\201602231950382_InitialCreate.Designer.cs">
-      <DependentUpon>201602231950382_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201602231959405_RegisteredUserDBContext.cs" />
-    <Compile Include="Migrations\201602231959405_RegisteredUserDBContext.Designer.cs">
-      <DependentUpon>201602231959405_RegisteredUserDBContext.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201602232110553_productDemographic.cs" />
-    <Compile Include="Migrations\201602232110553_productDemographic.Designer.cs">
-      <DependentUpon>201602232110553_productDemographic.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201602241458377_RegisteredUserDBContext1.cs" />
-    <Compile Include="Migrations\201602241458377_RegisteredUserDBContext1.Designer.cs">
-      <DependentUpon>201602241458377_RegisteredUserDBContext1.cs</DependentUpon>
+    <Compile Include="Migrations\201602241656585_InitialMigration.cs" />
+    <Compile Include="Migrations\201602241656585_InitialMigration.Designer.cs">
+      <DependentUpon>201602241656585_InitialMigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\RegisteredUserModel.cs" />
     <Compile Include="Models\RoleActions.cs" />
-    <Compile Include="Models\SurveyModel.cs" />
+    <Compile Include="Models\Survey.cs" />
+    <Compile Include="Models\RegisteredUserDBContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -323,23 +309,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201602231817026_Initial.resx">
-      <DependentUpon>201602231817026_Initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201602231950382_InitialCreate.resx">
-      <DependentUpon>201602231950382_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201602231959405_RegisteredUserDBContext.resx">
-      <DependentUpon>201602231959405_RegisteredUserDBContext.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201602232110553_productDemographic.resx">
-      <DependentUpon>201602232110553_productDemographic.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201602241458377_RegisteredUserDBContext1.resx">
-      <DependentUpon>201602241458377_RegisteredUserDBContext1.cs</DependentUpon>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
@@ -352,6 +321,11 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201602241656585_InitialMigration.resx">
+      <DependentUpon>201602241656585_InitialMigration.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

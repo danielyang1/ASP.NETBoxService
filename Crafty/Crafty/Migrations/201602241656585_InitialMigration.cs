@@ -3,7 +3,7 @@ namespace Crafty.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class RegisteredUserDBContext1 : DbMigration
+    public partial class InitialMigration : DbMigration
     {
         public override void Up()
         {
@@ -26,12 +26,26 @@ namespace Crafty.Migrations
                 .ForeignKey("dbo.RegisteredUsers", t => t.user_ID)
                 .Index(t => t.user_ID);
             
+            CreateTable(
+                "dbo.RegisteredUsers",
+                c => new
+                    {
+                        ID = c.Int(nullable: false, identity: true),
+                        name = c.String(),
+                        address = c.String(),
+                        subscriptionCost = c.Int(nullable: false),
+                        totalSubscriptionCost = c.Int(nullable: false),
+                        productDemographic = c.String(),
+                    })
+                .PrimaryKey(t => t.ID);
+            
         }
         
         public override void Down()
         {
             DropForeignKey("dbo.Surveys", "user_ID", "dbo.RegisteredUsers");
             DropIndex("dbo.Surveys", new[] { "user_ID" });
+            DropTable("dbo.RegisteredUsers");
             DropTable("dbo.Surveys");
         }
     }
