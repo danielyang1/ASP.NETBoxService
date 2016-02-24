@@ -1,12 +1,9 @@
 ﻿@model Crafty.Models.Survey
-
 @{
     ViewBag.Title = "Take Survey";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
 <h2>Create</h2>
-
 
 @using (Html.BeginForm())
 {
@@ -17,76 +14,177 @@
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
-            <h3>1. What type of drink do you prefer?</h3>
+            <h3>1. Do you drink regularly?</h3>
             <div class="col-md-10">
-                @{var listItems = new List<SelectListItem>
+                @{var listItems1 = new List<SelectListItem>
                         ()
                 {
-                new SelectListItem {Text = "Vodka",   Value = "1"},
-                new SelectListItem {Text = "Beer", Value = "2"}
+                new SelectListItem {Text = "Yes",   Value = "1"},
+                new SelectListItem {Text = "No", Value = "2"}
                 };
 
-                    @Html.DropDownListFor(m => m.question1, listItems)
+                    @Html.DropDownListFor(m => m.question1, listItems1)
                 }
             </div>
         </div>
-
         <div class="form-group">
-            @Html.LabelFor(model => model.question2, htmlAttributes: new { @class = "control-label col-md-2" })
+            <h3>2. Do you consume an alcoholic beverage rather quickly or slowly?</h3>
             <div class="col-md-10">
-                @Html.EditorFor(model => model.question2, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.question2, "", new { @class = "text-danger" })
+                @{var listItems2 = new List<SelectListItem>
+                        ()
+                {
+                new SelectListItem {Text = "Quickly",   Value = "5"},
+                new SelectListItem {Text = "Slowly", Value = "1"}
+                };
+
+                    @Html.DropDownListFor(m => m.question1, listItems2)
+                }
             </div>
         </div>
-
         <div class="form-group">
-            @Html.LabelFor(model => model.question3, htmlAttributes: new { @class = "control-label col-md-2" })
+            <h3>3. How many times have you visited a vineyard within the past 3 years?</h3>
             <div class="col-md-10">
-                @Html.EditorFor(model => model.question3, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.question3, "", new { @class = "text-danger" })
+                @{var listItems3 = new List<SelectListItem>
+                        ()
+                {
+                new SelectListItem {Text = "Yes",   Value = "1"},
+                new SelectListItem {Text = "No", Value = "5"}
+                };
+
+                    @Html.DropDownListFor(m => m.question1, listItems3)
+                }
             </div>
         </div>
-
         <div class="form-group">
-            @Html.LabelFor(model => model.question4, htmlAttributes: new { @class = "control-label col-md-2" })
+            <h3>4.  How many days a week do you consume an alcoholic beverage?</h3>
             <div class="col-md-10">
-                @Html.EditorFor(model => model.question4, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.question4, "", new { @class = "text-danger" })
+                @{var listItems4 = new List<SelectListItem>
+                        ()
+                {
+                new SelectListItem {Text = "1",   Value = "1"},
+                new SelectListItem {Text = "2 - 3 days a week", Value = "2"},
+                new SelectListItem {Text = "4 - 5 days a week", Value = "3"},
+                new SelectListItem {Text = "5 - 7 days a week", Value = "5"}
+                };
+
+                    @Html.DropDownListFor(m => m.question1, listItems4)
+                }
             </div>
         </div>
-
         <div class="form-group">
-            @Html.LabelFor(model => model.question5, htmlAttributes: new { @class = "control-label col-md-2" })
+            <h3>5.  Do you often consume mixed drinks?</h3>
             <div class="col-md-10">
-                @Html.EditorFor(model => model.question5, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.question5, "", new { @class = "text-danger" })
+                @{var listItems5 = new List<SelectListItem>
+                        ()
+                {
+               new SelectListItem {Text = "1",   Value = "1"},
+               new SelectListItem {Text = "2 - 3 days a week", Value = "3"},
+               new SelectListItem {Text = "4 - 5 days a week", Value = "4"},
+               new SelectListItem {Text = "5 - 7 days a week", Value = "10"}
+                };
+
+                    @Html.DropDownListFor(m => m.question1, listItems5)
+                }
             </div>
         </div>
-
         <div class="form-group">
-            @Html.LabelFor(model => model.question6, htmlAttributes: new { @class = "control-label col-md-2" })
+            <h3>6.  How many times have you visited a brewery within the past 3 years?</h3>
             <div class="col-md-10">
-                @Html.EditorFor(model => model.question6, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.question6, "", new { @class = "text-danger" })
+                @{var listItems6 = new List<SelectListItem>
+                        ()
+                {
+                new SelectListItem {Text = "Yes",   Value = "3"},
+                new SelectListItem {Text = "No", Value = "1"}
+                };
+
+                    @Html.DropDownListFor(m => m.question1, listItems6)
+                }
             </div>
         </div>
-
         <div class="form-group">
-            @Html.LabelFor(model => model.question7, htmlAttributes: new { @class = "control-label col-md-2" })
+            <h3>7. How many times have you visited a distillery within the past 3 years?</h3>
             <div class="col-md-10">
-                @Html.EditorFor(model => model.question7, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.question7, "", new { @class = "text-danger" })
+                @{var listItems7 = new List<SelectListItem>
+                        ()
+                {
+                new SelectListItem {Text = "Once",   Value = "1"},
+                new SelectListItem {Text = "Twice", Value = "3"},
+                new SelectListItem {Text = "3 or more times", Value = "10"}
+                };
+
+                    @Html.DropDownListFor(m => m.question1, listItems7)
+                }
             </div>
         </div>
-
         <div class="form-group">
-            @Html.LabelFor(model => model.question8, htmlAttributes: new { @class = "control-label col-md-2" })
+            <h3>8.  If you do drink spirits, are they of a high alcoholic volume?</h3>
             <div class="col-md-10">
-                @Html.EditorFor(model => model.question8, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.question8, "", new { @class = "text-danger" })
+                @{var listItems8 = new List<SelectListItem>
+                        ()
+                {
+                new SelectListItem {Text = "Yes",   Value = "10"},
+                new SelectListItem {Text = "No", Value = "1"}
+                };
+
+                    @Html.DropDownListFor(m => m.question1, listItems8)
+                }
             </div>
         </div>
+        @*<div class="form-group">
+                @Html.LabelFor(model => model.question2, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.question2, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.question2, "", new { @class = "text-danger" })
+                </div>
+            </div>
 
+            <div class="form-group">
+                @Html.LabelFor(model => model.question3, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.question3, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.question3, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.question4, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.question4, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.question4, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.question5, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.question5, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.question5, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.question6, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.question6, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.question6, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.question7, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.question7, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.question7, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.question8, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.question8, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.question8, "", new { @class = "text-danger" })
+                </div>
+            </div>*@
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Submit Survey" class="btn btn-default" />
@@ -94,11 +192,10 @@
         </div>
     </div>
                     }
-
 <div>
     @Html.ActionLink("Back to List", "Index")
 </div>
-
-@section Scripts {
+@section Scripts
+{
     @Scripts.Render("~/bundles/jqueryval")
 }
