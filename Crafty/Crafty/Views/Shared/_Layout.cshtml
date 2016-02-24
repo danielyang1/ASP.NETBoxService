@@ -22,15 +22,26 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    
+
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Survey", "Create", "Survey")</li>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li> @Html.ActionLink("Create", "Create", "Survey") </li>
+                    }
                     <li>@Html.ActionLink("Products", "Products", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        @if (User.Identity.Name =="admin@beer.com")
+                        {
+                            <li> @Html.ActionLink("Survey", "/", "Survey") </li>
+                        }
+                    </ul>
+                </div>
+                </div>
             </div>
-        </div>
     </div>
     <div class="container body-content">
         @RenderBody()
