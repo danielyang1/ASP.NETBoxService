@@ -46,10 +46,20 @@ namespace Crafty.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,question1,question2,question3,question4,question5,question6,question7,question8")] Survey survey)
+        public ActionResult Create([Bind(Include = "ID,question1,question2,question3,question4,question5,question6,question7,question8,sum")] Survey survey)
         {
             if (ModelState.IsValid)
             {
+                survey.sum = survey.question1 + survey.question2 + survey.question3 + survey.question4 + survey.question5 + survey.question6 + survey.question7 + survey.question8;
+
+                //Determine product here
+
+                //if(survey.sum < 10)
+                //{
+                //    string survey.productDemographic = Beer;
+                //}
+                
+                //int count = db.RegisteredUsers.Count(); Entity Framework
                 db.Questions.Add(survey);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -78,7 +88,7 @@ namespace Crafty.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,question1,question2,question3,question4,question5,question6,question7,question8")] Survey survey)
+        public ActionResult Edit([Bind(Include = "ID,question1,question2,question3,question4,question5,question6,question7,question8,sum")] Survey survey)
         {
             if (ModelState.IsValid)
             {

@@ -12,7 +12,7 @@ namespace Crafty.Models
         public string address { get; set; }
         public int subscriptionCost { get; set; }
         public int totalSubscriptionCost { get; set; }
-        public string productDemographic { get; set; }
+
 
         //public Product product {get; set;}
 

@@ -3,7 +3,7 @@ namespace Crafty.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class InitialMigration : DbMigration
+    public partial class Migration : DbMigration
     {
         public override void Up()
         {
@@ -20,6 +20,7 @@ namespace Crafty.Migrations
                         question6 = c.Int(nullable: false),
                         question7 = c.Int(nullable: false),
                         question8 = c.Int(nullable: false),
+                        sum = c.Int(nullable: false),
                         user_ID = c.Int(),
                     })
                 .PrimaryKey(t => t.ID)
