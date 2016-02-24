@@ -20,7 +20,7 @@ namespace Crafty.Migrations
                         question6 = c.Int(nullable: false),
                         question7 = c.Int(nullable: false),
                         question8 = c.Int(nullable: false),
-                        userID = c.Int(nullable: false),
+                        userID = c.String(),
                         sum = c.Int(nullable: false),
                         productDemographic = c.String(),
                     })

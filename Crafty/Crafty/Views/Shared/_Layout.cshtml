@@ -34,14 +34,14 @@
                 @Html.Partial("_LoginPartial")
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        @if (User.Identity.Name =="admin@beer.com")
+                        @if (User.Identity.Name == "admin@beer.com")
                         {
                             <li> @Html.ActionLink("Survey", "/", "Survey") </li>
                         }
                     </ul>
                 </div>
-                </div>
             </div>
+        </div>
     </div>
     <div class="container body-content">
         @RenderBody()
