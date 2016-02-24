@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Crafty.Models;
+using Microsoft.AspNet.Identity;
 
 namespace Crafty.Controllers
 {
@@ -52,14 +53,34 @@ namespace Crafty.Controllers
             {
                 survey.sum = survey.question1 + survey.question2 + survey.question3 + survey.question4 + survey.question5 + survey.question6 + survey.question7 + survey.question8;
 
+                survey.userID = User.Identity.GetUserId();
+
                 //Determine product here
 
-                //if(survey.sum < 10)
-                //{
-                //    string survey.productDemographic = Beer;
-                //}
-                
+                survey.productDemographic = survey.sum < 10 ? "Beer" : survey.sum < 20 ? "Wine" : "Liquor";
+
+
                 //int count = db.RegisteredUsers.Count(); Entity Framework
+
+                //if wine...
+                //if hard liquor...differentiate between hard liquors
+                //if beer....have some question that differentiates between beer types
+
+
+
+
+                /*if (ModelState.IsValid)
+                {
+                db.SurveyResponses.Add(surveyModel);
+                db.SaveChanges();
+                // int y = surveyModel.Age;
+                // db.SurveyResponses.Select(x => x).Where(x => x.Age < 21);
+                return RedirectToAction("GetCurrentSurveyResults",survey);             //Joey's example to call method "GetCurrentSurveyResults" with parameter survey
+                }
+
+                return View(surveyModel);
+                }*/
+
                 db.Questions.Add(survey);
                 db.SaveChanges();
                 return RedirectToAction("Index");

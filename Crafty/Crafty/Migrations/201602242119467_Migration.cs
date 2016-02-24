@@ -20,12 +20,11 @@ namespace Crafty.Migrations
                         question6 = c.Int(nullable: false),
                         question7 = c.Int(nullable: false),
                         question8 = c.Int(nullable: false),
+                        userID = c.Int(nullable: false),
                         sum = c.Int(nullable: false),
-                        user_ID = c.Int(),
+                        productDemographic = c.String(),
                     })
-                .PrimaryKey(t => t.ID)
-                .ForeignKey("dbo.RegisteredUsers", t => t.user_ID)
-                .Index(t => t.user_ID);
+                .PrimaryKey(t => t.ID);
             
             CreateTable(
                 "dbo.RegisteredUsers",
@@ -36,7 +35,6 @@ namespace Crafty.Migrations
                         address = c.String(),
                         subscriptionCost = c.Int(nullable: false),
                         totalSubscriptionCost = c.Int(nullable: false),
-                        productDemographic = c.String(),
                     })
                 .PrimaryKey(t => t.ID);
             
@@ -44,8 +42,6 @@ namespace Crafty.Migrations
         
         public override void Down()
         {
-            DropForeignKey("dbo.Surveys", "user_ID", "dbo.RegisteredUsers");
-            DropIndex("dbo.Surveys", new[] { "user_ID" });
             DropTable("dbo.RegisteredUsers");
             DropTable("dbo.Surveys");
         }

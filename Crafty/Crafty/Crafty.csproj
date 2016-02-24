@@ -217,9 +217,13 @@
     <Compile Include="MasterPage.Master.designer.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201602241800002_Migration.cs" />
-    <Compile Include="Migrations\201602241800002_Migration.Designer.cs">
-      <DependentUpon>201602241800002_Migration.cs</DependentUpon>
+    <Compile Include="Migrations\201602242119467_Migration.cs" />
+    <Compile Include="Migrations\201602242119467_Migration.Designer.cs">
+      <DependentUpon>201602242119467_Migration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201602242135459_initialMigration.cs" />
+    <Compile Include="Migrations\201602242135459_initialMigration.Designer.cs">
+      <DependentUpon>201602242135459_initialMigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -294,7 +298,6 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Home\Survey.cshtml" />
     <Content Include="Views\Home\Products.cshtml" />
     <Content Include="Views\RegisteredUsers\Create.cshtml" />
     <Content Include="Views\RegisteredUsers\Delete.cshtml" />
@@ -307,6 +310,7 @@
     <Content Include="Views\Survey\Edit.cshtml" />
     <Content Include="Views\Survey\Index.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Home\Survey.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -323,8 +327,11 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201602241800002_Migration.resx">
-      <DependentUpon>201602241800002_Migration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201602242119467_Migration.resx">
+      <DependentUpon>201602242119467_Migration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602242135459_initialMigration.resx">
+      <DependentUpon>201602242135459_initialMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
