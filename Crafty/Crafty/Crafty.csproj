@@ -233,6 +233,10 @@
     <Compile Include="Migrations\201602232110553_productDemographic.Designer.cs">
       <DependentUpon>201602232110553_productDemographic.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201602241458377_RegisteredUserDBContext1.cs" />
+    <Compile Include="Migrations\201602241458377_RegisteredUserDBContext1.Designer.cs">
+      <DependentUpon>201602241458377_RegisteredUserDBContext1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -279,7 +283,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="Views\Web.config" />
-    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Survey\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
@@ -330,6 +334,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201602232110553_productDemographic.resx">
       <DependentUpon>201602232110553_productDemographic.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602241458377_RegisteredUserDBContext1.resx">
+      <DependentUpon>201602241458377_RegisteredUserDBContext1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

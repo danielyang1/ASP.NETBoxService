@@ -28,7 +28,7 @@ namespace Crafty.Models
     {
         public DbSet<RegisteredUser> RegisteredUsers { get; set; }
         public DbSet<Survey> Questions { get; set; }
-        //this is where we can add more databases
+        //this is where we can add more tables to database
     }
 
     public class Survey
