@@ -1,0 +1,83 @@
+﻿@model Crafty.Models.Survey
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Survey</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.question1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.question1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.question2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.question2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.question3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.question3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.question4)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.question4)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.question5)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.question5)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.question6)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.question6)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.question7)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.question7)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.question8)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.question8)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

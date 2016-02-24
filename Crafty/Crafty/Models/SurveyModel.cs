@@ -4,6 +4,7 @@ using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 
 namespace Crafty.Models
 {
@@ -18,13 +19,34 @@ namespace Crafty.Models
 
         //after adding new property, update "Bind(include" in Create and Edit action methods; also edit the Views\RegisteredUser\Index.cshtml and Views\RegisteredUsers\Create file to include <th> and <td> NEW PROPERTY 
         //or just read http://www.asp.net/mvc/overview/getting-started/introduction/adding-a-new-field
+
+        //will need a Question Model/Controller
+
     }
 
     public class RegisteredUserDBContext : DbContext
     {
         public DbSet<RegisteredUser> RegisteredUsers { get; set; }
+        public DbSet<Survey> Questions { get; set; }
         //this is where we can add more databases
     }
+
+    public class Survey
+    {
+        public int ID { get; set; }
+        public int question1 { get; set; }
+        public int question2 { get; set; }
+        public int question3 { get; set; }
+        public int question4 { get; set; }
+        public int question5 { get; set; }
+        public int question6 { get; set; }
+        public int question7 { get; set; }
+        public int question8 { get; set; }
+        RegisteredUser user { get; set; }
+
+    }
+
+
 
 
 
