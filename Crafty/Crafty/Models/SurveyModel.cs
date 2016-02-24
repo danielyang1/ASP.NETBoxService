@@ -17,6 +17,8 @@ namespace Crafty.Models
         public int totalSubscriptionCost { get; set; }
         public string productDemographic { get; set; }
 
+        //public Product product {get; set;}
+
         //after adding new property, update "Bind(include" in Create and Edit action methods; also edit the Views\RegisteredUser\Index.cshtml and Views\RegisteredUsers\Create file to include <th> and <td> NEW PROPERTY 
         //or just read http://www.asp.net/mvc/overview/getting-started/introduction/adding-a-new-field
 
