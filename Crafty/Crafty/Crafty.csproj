@@ -217,9 +217,9 @@
     <Compile Include="MasterPage.Master.designer.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201602242235428_Migration.cs" />
-    <Compile Include="Migrations\201602242235428_Migration.Designer.cs">
-      <DependentUpon>201602242235428_Migration.cs</DependentUpon>
+    <Compile Include="Migrations\201602250249062_migration.cs" />
+    <Compile Include="Migrations\201602250249062_migration.Designer.cs">
+      <DependentUpon>201602250249062_migration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -261,7 +261,9 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -322,8 +324,8 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201602242235428_Migration.resx">
-      <DependentUpon>201602242235428_Migration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201602250249062_migration.resx">
+      <DependentUpon>201602250249062_migration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

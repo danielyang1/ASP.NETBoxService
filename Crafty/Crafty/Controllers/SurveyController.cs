@@ -8,6 +8,8 @@ using System.Web;
 using System.Web.Mvc;
 using Crafty.Models;
 using Microsoft.AspNet.Identity;
+using System.Data.SqlClient;
+using System.Configuration;
 
 namespace Crafty.Controllers
 {
@@ -53,7 +55,34 @@ namespace Crafty.Controllers
             {
                 survey.sum = survey.question1 + survey.question2 + survey.question3 + survey.question4 + survey.question5 + survey.question6 + survey.question7 + survey.question8;
 
-                survey.userID = User.Identity.GetUserId();
+                survey.userID = User.Identity.GetUserId();            ///this should be int? not sure
+
+                // User.Identity.getUser
+
+              //  var d = db.Questions.First(a => a.ID == survey.ID);
+
+
+                //using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["DefaultConnection"].ToString()))            //SQL connection; this kind of works
+                //{
+                //    // string query = "SELECT ID FROM Surveys";
+                //    string query = "SELECT Id FROM AspNetUsers";
+                //    string query2 = "Select * FROM AspNetUsers where Id=@survey.ID";
+                //    string n;
+                //    SqlCommand command = new SqlCommand(query, connection);
+                //    connection.Open();
+                //    using (SqlDataReader reader = command.ExecuteReader())
+                //    {
+                //        while (reader.Read())
+                //            n = reader.GetValue(0).ToString();
+                //            //users.Add(reader.GetInt32(0), reader.GetInt32(1));
+                //        reader.Close();
+                //    }
+                //    connection.Close();
+                //}
+
+
+         
+
 
                 //Determine product here
 
