@@ -3,11 +3,11 @@
     ViewBag.Title = "Profile Page";
 }
 
-<h2>@ViewBag.Title.</h2>
+<h2>@ViewBag.Title</h2>
 
 <p class="text-success">@ViewBag.StatusMessage</p>
 <div> 
-    <h4>Your current box: </h4>                                                                       @*To edit this page, also edit ManageViewModel and ManageController*@
+    <h3>Your current box: </h3>                                                                       @*To edit this page, also edit ManageViewModel and ManageController*@
     @{ 
         @Model.product;                                                      
     }

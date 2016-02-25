@@ -56,7 +56,21 @@ namespace Crafty.Controllers
             {
                 survey.sum = survey.question1 + survey.question2 + survey.question3 + survey.question4 + survey.question5 + survey.question6 + survey.question7 + survey.question8;
 
-                survey.userID = User.Identity.GetUserId();            ///this should be int? not sure
+                survey.userID = User.Identity.GetUserId();
+
+                var hasUserAlreadyTakenSurvey = db.Questions.Where(y => y.userID == survey.userID).FirstOrDefault();
+
+                if (hasUserAlreadyTakenSurvey != null)
+                {
+                    db.Questions.RemoveRange(db.Questions.Where(v => v.userID == survey.userID));
+                    db.SaveChanges();
+                }
+
+
+
+
+
+                //if user exists in survey database, delete user row
 
                 //1234 rebuild database after lunch
 
