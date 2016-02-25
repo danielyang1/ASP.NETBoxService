@@ -1,14 +1,15 @@
 ﻿@model Crafty.Models.IndexViewModel
 @{
-    ViewBag.Title = "Manage";
+    ViewBag.Title = "Profile Page";
 }
 
 <h2>@ViewBag.Title.</h2>
 
 <p class="text-success">@ViewBag.StatusMessage</p>
-<div>                                                                        @*To edit this page, also edit ManageViewModel and ManageController*@
+<div> 
+    <h4>Your current box: </h4>                                                                       @*To edit this page, also edit ManageViewModel and ManageController*@
     @{ 
-        @Model.userID                                                          
+        @Model.product;                                                      
     }
     <h4>Change your account settings</h4>
     <hr />

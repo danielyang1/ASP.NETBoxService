@@ -357,14 +357,7 @@ namespace Crafty.Controllers
 
         private string getUserID()                                              //get userID
         {
-            Survey survey = new Survey();
-            
             string userID = User.Identity.GetUserId();
-
-
-            
-
-
             return userID;
         }
 
@@ -377,7 +370,7 @@ namespace Crafty.Controllers
             //  survey.productDemographic
             string userID = getUserID();
 
-            string prods = db.Questions.Select(y => y).Where(u => u.userID == userID).Select(m => m.productDemographic).Single();
+            string product = db.Questions.Select(y => y).Where(u => u.userID == userID).Select(m => m.box.boxName).Single();
 
             //string n = "";
             //using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["DefaultConnection"].ToString()))
@@ -389,7 +382,7 @@ namespace Crafty.Controllers
 
             //    //string prods = db.Questions.Select(y => y).Where(u => u.userID == userID).Select(m => m.productDemographic).Single();
 
-            return prods;
+            return product;
             //}
         }
 
