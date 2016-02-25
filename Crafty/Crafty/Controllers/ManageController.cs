@@ -370,50 +370,27 @@ namespace Crafty.Controllers
 
         private string getProduct()                                       //1234
         {
-          //  RegisteredUserDBContext db = new RegisteredUserDBContext();
+            //  RegisteredUserDBContext db = new RegisteredUserDBContext();
 
-            Survey survey = new Survey();
-          //  survey.productDemographic
+            // Survey survey = new Survey();
+            RegisteredUserDBContext db = new RegisteredUserDBContext();
+            //  survey.productDemographic
             string userID = getUserID();
-    
-            string n = "";
-            using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["DefaultConnection"].ToString()))
-            {
-                string query = "SELECT productDemographic FROM Surveys WHERE userID=@userID";          //try simplyfying this line to similar to below
-                SqlCommand command = new SqlCommand(query, connection);
-                command.Parameters.AddWithValue("@userID", userID);
 
-                connection.Open();
-                var proddemo = command.ExecuteScalar();
-                using (SqlDataReader reader = command.ExecuteReader())
-                {
-                    while (reader.Read())
-                        n = reader.GetValue(0).ToString();
-                    //users.Add(reader.GetInt32(0), reader.GetInt32(1));
-                    reader.Close();
-                }
-                connection.Close();
-            }
+            string prods = db.Questions.Select(y => y).Where(u => u.userID == userID).Select(m => m.productDemographic).Single();
 
-            using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["DefaultConnection"].ToString()))            //SQL connection; this kind of works
-            {
-                // string query = "SELECT ID FROM Surveys";
-                string query = "SELECT Id FROM AspNetUsers";
-               // string query2 = "Select * FROM AspNetUsers where Id=@survey.ID";
-                string t;
-                SqlCommand command = new SqlCommand(query, connection);
-                connection.Open();
-                using (SqlDataReader reader = command.ExecuteReader())
-                {
-                    while (reader.Read())
-                        t = reader.GetValue(0).ToString();
-                    //users.Add(reader.GetInt32(0), reader.GetInt32(1));
-                    reader.Close();
-                }
-                connection.Close();
-            }
+            //string n = "";
+            //using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["DefaultConnection"].ToString()))
+            //{
+            //    //string query = "SELECT productDemographic FROM Surveys WHERE userID=@userID";          //try simplyfying this line to similar to below
+            //    //string query = "SELECT ID FROM Surveys";
+            //    //SqlCommand command = new SqlCommand(query, connection);
+            //    //command.Parameters.AddWithValue("@userID", userID);
 
-            return n;
+            //    //string prods = db.Questions.Select(y => y).Where(u => u.userID == userID).Select(m => m.productDemographic).Single();
+
+
+            //}
         }
 
         private bool HasPassword()
