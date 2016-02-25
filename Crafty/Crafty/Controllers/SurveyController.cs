@@ -136,7 +136,7 @@ namespace Crafty.Controllers
 
                 db.Questions.Add(survey);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("ThankYou");
             }
 
             return View(survey);

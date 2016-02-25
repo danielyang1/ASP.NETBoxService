@@ -319,6 +319,7 @@
     <Content Include="Views\BoxModels\Details.cshtml" />
     <Content Include="Views\BoxModels\Edit.cshtml" />
     <Content Include="Views\BoxModels\Index.cshtml" />
+    <Content Include="Views\Survey\ThankYou.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
