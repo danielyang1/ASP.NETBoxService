@@ -5,8 +5,13 @@ using System.Web;
 
 namespace Crafty.Models
 {
-    public class Wine
+    public class Wine : AlcoholProduct
     {
-        public string name = "wine";
+        public string name;
+
+        public Wine(string name)
+        {
+            this.name = name;
+        }
     }
 }

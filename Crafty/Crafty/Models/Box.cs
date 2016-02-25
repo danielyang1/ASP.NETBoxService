@@ -10,6 +10,7 @@ namespace Crafty.Models
         public int ID { get; set; }
         public string boxName { get; set; }
         public double boxPrice { get; set; }
+        public double test { get; set; }
         public virtual List<AlcoholProduct> boxContents { get; set; }
     }
 }

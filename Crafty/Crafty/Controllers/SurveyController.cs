@@ -103,17 +103,18 @@ namespace Crafty.Controllers
                 Box beerBox = new Box();
                 beerBox.boxName = "Beer box";
                 beerBox.boxPrice = 45.00;
-                beerBox.boxContents = new List<string>(){ "Miller", "PBR", "Goose Island"};
+                beerBox.boxContents = new List<AlcoholProduct>() { new Beer("Miller Lite"), new Beer("PBR"), new Beer("GooseIsland") };
+               // beerBox.boxContents = new List<string>(){ "Miller", "PBR", "Goose Island"};
 
                 Box wineBox = new Box();
                 wineBox.boxName = "Wine box";
                 wineBox.boxPrice = 35.00;
-                wineBox.boxContents = new List<string>() { "some chardony", "some zinfandel", "something else" };
+              //  wineBox.boxContents = new List<string>() { "some chardony", "some zinfandel", "something else" };
 
                 Box hardLiquorBox = new Box();
                 hardLiquorBox.boxName = "Hard liquor box";
                 hardLiquorBox.boxPrice = 50.00;
-                hardLiquorBox.boxContents = new List<string>() { "Gray goose", "Bacardi 151", "Patron Silver" };
+                hardLiquorBox.boxContents = new List<AlcoholProduct>() { new Vodka("Grey Goose"), new Rum("Bacardi 151"), new Tequila("Patron Silver") };
 
                 survey.box = beerBox;
 

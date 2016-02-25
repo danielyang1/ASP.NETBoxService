@@ -9,6 +9,7 @@ using Microsoft.Owin.Security;
 using Crafty.Models;
 using System.Data.SqlClient;
 using System.Configuration;
+using System.Collections.Generic;
 
 namespace Crafty.Controllers
 {
@@ -69,6 +70,7 @@ namespace Crafty.Controllers
             var model = new IndexViewModel
             {
                 product = getProduct(),
+                boxContents = getBoxContents(),
                 userID = getUserID(),
                 HasPassword = HasPassword(),
                 PhoneNumber = await UserManager.GetPhoneNumberAsync(userId),
@@ -363,27 +365,24 @@ namespace Crafty.Controllers
 
         private string getProduct()                                       //1234
         {
-            //  RegisteredUserDBContext db = new RegisteredUserDBContext();
-
-            // Survey survey = new Survey();
             RegisteredUserDBContext db = new RegisteredUserDBContext();
-            //  survey.productDemographic
-            string userID = getUserID();
 
+            string userID = getUserID();
             string product = db.Questions.Select(y => y).Where(u => u.userID == userID).Select(m => m.box.boxName).Single();
 
-            //string n = "";
-            //using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["DefaultConnection"].ToString()))
-            //{
-            //    //string query = "SELECT productDemographic FROM Surveys WHERE userID=@userID";          //try simplyfying this line to similar to below
-            //    //string query = "SELECT ID FROM Surveys";
-            //    //SqlCommand command = new SqlCommand(query, connection);
-            //    //command.Parameters.AddWithValue("@userID", userID);
-
-            //    //string prods = db.Questions.Select(y => y).Where(u => u.userID == userID).Select(m => m.productDemographic).Single();
-
             return product;
-            //}
+
+        }
+
+        private string getBoxContents()
+        {
+            RegisteredUserDBContext db = new RegisteredUserDBContext();
+
+            string userID = getUserID();
+
+            List<string> boxContents;
+
+
         }
 
         private bool HasPassword()

@@ -5,11 +5,11 @@ using System.Web;
 
 namespace Crafty.Models
 {
-    public class Beer : AlcoholProduct
+    public class Rum : AlcoholProduct
     {
         public string name;
 
-        public Beer(string name)
+        public Rum(string name)
         {
             this.name = name;
         }
