@@ -70,7 +70,7 @@ namespace Crafty.Controllers
             var model = new IndexViewModel
             {
                 product = getProduct(),
-                boxContents = getBoxContents(),
+               // boxContents = getBoxContents(),
                 userID = getUserID(),
                 HasPassword = HasPassword(),
                 PhoneNumber = await UserManager.GetPhoneNumberAsync(userId),
@@ -374,16 +374,14 @@ namespace Crafty.Controllers
 
         }
 
-        private string getBoxContents()
-        {
-            RegisteredUserDBContext db = new RegisteredUserDBContext();
+        //private string getBoxContents()                               //come back to this later
+        //{
+        //    RegisteredUserDBContext db = new RegisteredUserDBContext();
 
-            string userID = getUserID();
-
-            List<string> boxContents;
-
-
-        }
+        //    string userID = getUserID();
+        //   // string boxContents = db.Questions.Select(y => y).Where(u => u.userID == userID).Select(m => m.box.boxContents[0].ID).Single();
+        //   // List<string> boxContents;
+        //}
 
         private bool HasPassword()
         {
