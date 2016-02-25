@@ -27,7 +27,7 @@ namespace Crafty.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            BoxModels boxModels = db.BoxModels.Find(id);
+            Box boxModels = db.BoxModels.Find(id);
             if (boxModels == null)
             {
                 return HttpNotFound();
@@ -46,7 +46,7 @@ namespace Crafty.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,boxName,boxPrice")] BoxModels boxModels)
+        public ActionResult Create([Bind(Include = "ID,boxName,boxPrice")] Box boxModels)
         {
             if (ModelState.IsValid)
             {
@@ -65,7 +65,7 @@ namespace Crafty.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            BoxModels boxModels = db.BoxModels.Find(id);
+            Box boxModels = db.BoxModels.Find(id);
             if (boxModels == null)
             {
                 return HttpNotFound();
@@ -78,7 +78,7 @@ namespace Crafty.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,boxName,boxPrice")] BoxModels boxModels)
+        public ActionResult Edit([Bind(Include = "ID,boxName,boxPrice")] Box boxModels)
         {
             if (ModelState.IsValid)
             {
@@ -96,7 +96,7 @@ namespace Crafty.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            BoxModels boxModels = db.BoxModels.Find(id);
+            Box boxModels = db.BoxModels.Find(id);
             if (boxModels == null)
             {
                 return HttpNotFound();
@@ -109,7 +109,7 @@ namespace Crafty.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(string id)
         {
-            BoxModels boxModels = db.BoxModels.Find(id);
+            Box boxModels = db.BoxModels.Find(id);
             db.BoxModels.Remove(boxModels);
             db.SaveChanges();
             return RedirectToAction("Index");

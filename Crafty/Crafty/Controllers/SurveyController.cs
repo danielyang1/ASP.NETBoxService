@@ -49,7 +49,7 @@ namespace Crafty.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Authorize(Roles = "Admin")]
+       // [Authorize(Roles = "Admin")]
         public ActionResult Create([Bind(Include = "ID,question1,question2,question3,question4,question5,question6,question7,question8,sum")] Survey survey)
         {
             if (ModelState.IsValid)
@@ -58,10 +58,7 @@ namespace Crafty.Controllers
 
                 survey.userID = User.Identity.GetUserId();            ///this should be int? not sure
 
-                // User.Identity.getUser
-
-              //  var d = db.Questions.First(a => a.ID == survey.ID);
-
+                //1234 rebuild database after lunch
 
                 //using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["DefaultConnection"].ToString()))            //SQL connection; this kind of works
                 //{
@@ -75,28 +72,23 @@ namespace Crafty.Controllers
                 //    {
                 //        while (reader.Read())
                 //            n = reader.GetValue(0).ToString();
-                //            //users.Add(reader.GetInt32(0), reader.GetInt32(1));
+                //        //users.Add(reader.GetInt32(0), reader.GetInt32(1));
                 //        reader.Close();
                 //    }
                 //    connection.Close();
                 //}
 
-
-         
-
-
                 //Determine product here
 
-                survey.productDemographic = survey.sum < 10 ? "Beer" : survey.sum < 20 ? "Wine" : "Liquor";
+               // survey.productDemographic = survey.sum < 10 ? "Beer" : survey.sum < 20 ? "Wine" : "Liquor";
 
+                Box beerBox = new Box("Beer box", 35.00, new List<string>() { "Miller", "PBR", "312 Goose Island" }); //causes entity validation error
+                Box wineBox = new Box("Wine box", 42.00, new List<string>() { "some chardonay, some zinfadel, something else" });
+                Box liquorBox = new Box("Hard liqour box", 40.00, new List<string>() { "Grey Goose", "Bacardi 151", "Patron Silver" });
 
-                //int count = db.RegisteredUsers.Count(); Entity Framework
+                survey.box = survey.sum < 10 ? beerBox : survey.sum < 20 ? wineBox : liquorBox;
 
-                //if wine...
-                //if hard liquor...differentiate between hard liquors
-                //if beer....have some question that differentiates between beer types
-
-
+                //int count = db.RegisteredUsers.Count(); Entity Framewor
 
 
                 /*if (ModelState.IsValid)
