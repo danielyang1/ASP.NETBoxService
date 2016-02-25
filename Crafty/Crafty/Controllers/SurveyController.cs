@@ -49,6 +49,7 @@ namespace Crafty.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public ActionResult Create([Bind(Include = "ID,question1,question2,question3,question4,question5,question6,question7,question8,sum")] Survey survey)
         {
             if (ModelState.IsValid)
@@ -174,7 +175,10 @@ namespace Crafty.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
-
+        public ActionResult ThankYou()
+        {
+            return View();
+        }
         protected override void Dispose(bool disposing)
         {
             if (disposing)

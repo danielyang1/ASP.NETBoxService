@@ -389,7 +389,7 @@ namespace Crafty.Controllers
 
             //    //string prods = db.Questions.Select(y => y).Where(u => u.userID == userID).Select(m => m.productDemographic).Single();
 
-
+            return prods;
             //}
         }
 
