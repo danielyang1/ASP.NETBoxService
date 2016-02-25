@@ -80,13 +80,30 @@ namespace Crafty.Controllers
 
                 //Determine product here
 
-               // survey.productDemographic = survey.sum < 10 ? "Beer" : survey.sum < 20 ? "Wine" : "Liquor";
+                // survey.productDemographic = survey.sum < 10 ? "Beer" : survey.sum < 20 ? "Wine" : "Liquor";
 
-                Box beerBox = new Box("Beer box", 35.00, new List<string>() { "Miller", "PBR", "312 Goose Island" }); //causes entity validation error
-                Box wineBox = new Box("Wine box", 42.00, new List<string>() { "some chardonay, some zinfadel, something else" });
-                Box liquorBox = new Box("Hard liqour box", 40.00, new List<string>() { "Grey Goose", "Bacardi 151", "Patron Silver" });
+                //Box beerBox = new Box("Beer box", 35.00, new List<string>() { "Miller", "PBR", "312 Goose Island" }); //causes entity validation error
+                //Box wineBox = new Box("Wine box", 42.00, new List<string>() { "some chardonay, some zinfadel, something else" });
+                //Box liquorBox = new Box("Hard liqour box", 40.00, new List<string>() { "Grey Goose", "Bacardi 151", "Patron Silver" });
 
-                survey.box = survey.sum < 10 ? beerBox : survey.sum < 20 ? wineBox : liquorBox;
+                Box beerBox = new Box();
+                beerBox.boxName = "Beer box";
+                beerBox.boxPrice = 45.00;
+                beerBox.boxContents = new List<string>(){ "Miller", "PBR", "Goose Island"};
+
+                Box wineBox = new Box();
+                wineBox.boxName = "Wine box";
+                wineBox.boxPrice = 35.00;
+                wineBox.boxContents = new List<string>() { "some chardony", "some zinfandel", "something else" };
+
+                Box hardLiquorBox = new Box();
+                hardLiquorBox.boxName = "Hard liquor box";
+                hardLiquorBox.boxPrice = 50.00;
+                hardLiquorBox.boxContents = new List<string>() { "Gray goose", "Bacardi 151", "Patron Silver" };
+
+                survey.box = beerBox;
+
+                survey.box = survey.sum < 10 ? beerBox : survey.sum < 20 ? wineBox : hardLiquorBox;
 
                 //int count = db.RegisteredUsers.Count(); Entity Framewor
 
