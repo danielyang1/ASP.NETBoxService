@@ -1,5 +1,4 @@
 ﻿@model IEnumerable<Crafty.Models.Survey>
-
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -8,14 +7,14 @@
 <h2>Survey Results</h2>
 
 <p>
+
     @Html.ActionLink("Create New", "Create")
 </p>
-
-@{ 
-    <p>testing 123....put user demographics here for the admin to see!</p>
-}
 <table class="table">
     <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.box.boxName)
+        </th>
         <th>
             @Html.DisplayNameFor(model => model.question1)
         </th>

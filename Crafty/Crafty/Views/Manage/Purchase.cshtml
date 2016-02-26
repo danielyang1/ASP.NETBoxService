@@ -1,0 +1,42 @@
+﻿@model Crafty.Models.IndexViewModel
+@{
+    ViewBag.Title = "Purchase Page";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<p class="text-success">@ViewBag.StatusMessage</p>
+
+
+<table class="table">
+    <tr>
+        <th>
+            Recommended Box
+        </th>
+        <th>
+            Box Price
+        </th>
+        <th>
+            Contents
+        </th>
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => modelItem.product)
+        </td>
+        <td>
+            $@Html.DisplayFor(modelItem => modelItem.boxPrice)
+        </td>
+        <td>
+            @foreach (string s in Model.contentNames)
+            {
+                <p>@s</p>
+            }
+        </td>
+</table>
+
+<div>
+
+    <h5><a href="/Survey/Create">&nbsp&nbspRetake survey</a></h5>
+    <br />
+
+</div>

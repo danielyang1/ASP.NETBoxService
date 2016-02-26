@@ -20,7 +20,7 @@ namespace Crafty.Models
         //RegisteredUser user { get; set; }
         public string userID { get; set; }
         public int sum { get; set; }
-        public string productDemographic { get; set; }         //previous version of "Box"...just a string of "beer", "wine" or "liquor"
+     //   public string productDemographic { get; set; }     
         public Box box { get; set; }
     }
 }

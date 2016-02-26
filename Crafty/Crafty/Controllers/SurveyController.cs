@@ -18,6 +18,9 @@ namespace Crafty.Controllers
         private RegisteredUserDBContext db = new RegisteredUserDBContext();
         private ApplicationDbContext adb = new ApplicationDbContext();
 
+        Survey s = new Survey();
+        Box box;
+
         // GET: Survey
         public ActionResult Index()
         {
@@ -65,6 +68,9 @@ namespace Crafty.Controllers
        // [Authorize(Roles = "Admin")]
         public ActionResult Create([Bind(Include = "ID,question1,question2,question3,question4,question5,question6,question7,question8,sum")] Survey survey)
         {
+
+            s = survey;
+
             if (ModelState.IsValid)
             {
                 survey.sum =  survey.question4 + survey.question8;
@@ -78,31 +84,8 @@ namespace Crafty.Controllers
                     db.Questions.RemoveRange(db.Questions.Where(v => v.userID == survey.userID));
                     db.SaveChanges();
                 }
-
-
-
-
-
+    
                 //if user exists in survey database, delete user row
-
-
-                //using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["DefaultConnection"].ToString()))            //SQL connection; this kind of works
-                //{
-                //    // string query = "SELECT ID FROM Surveys";
-                //    string query = "SELECT Id FROM AspNetUsers";
-                //    string query2 = "Select * FROM AspNetUsers where Id=@survey.ID";
-                //    string n;
-                //    SqlCommand command = new SqlCommand(query, connection);
-                //    connection.Open();
-                //    using (SqlDataReader reader = command.ExecuteReader())
-                //    {
-                //        while (reader.Read())
-                //            n = reader.GetValue(0).ToString();
-                //        //users.Add(reader.GetInt32(0), reader.GetInt32(1));
-                //        reader.Close();
-                //    }
-                //    connection.Close();
-                //}
 
                 //Determine product here
 
@@ -148,13 +131,20 @@ namespace Crafty.Controllers
                 return View(surveyModel);
                 }*/
 
+               // db.BoxModels.Add(survey.box);
                 db.Questions.Add(survey);
                 db.SaveChanges();
-                return RedirectToAction("ThankYou");
+                return RedirectToAction("Purchase", "Manage");
             }
 
             return View(survey);
         }
+
+        //public Box getBox()
+        //{
+        //    // Box box;
+        //    box = 
+        //}
 
         // GET: Survey/Edit/5
         public ActionResult Edit(int? id)
@@ -212,11 +202,13 @@ namespace Crafty.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
-        public ActionResult ThankYou()
+        public ActionResult ThankYou(Survey survey)  // https://github.com/mcmadmac11/LastBoxRepo/blob/master/LastBox/Controllers/SurveyModelsController.cs
         {
+            s = survey;
             return View();
         }
-        protected override void Dispose(bool disposing)
+
+    protected override void Dispose(bool disposing)
         {
             if (disposing)
             {
