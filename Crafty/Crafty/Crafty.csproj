@@ -219,25 +219,9 @@
     <Compile Include="MasterPage.Master.designer.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201602261730179_inial.cs" />
-    <Compile Include="Migrations\201602261730179_inial.Designer.cs">
-      <DependentUpon>201602261730179_inial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201602261646419_migration61.cs" />
-    <Compile Include="Migrations\201602261646419_migration61.Designer.cs">
-      <DependentUpon>201602261646419_migration61.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201602261716264_migration7.cs" />
-    <Compile Include="Migrations\201602261716264_migration7.Designer.cs">
-      <DependentUpon>201602261716264_migration7.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201602261723453_migration9.cs" />
-    <Compile Include="Migrations\201602261723453_migration9.Designer.cs">
-      <DependentUpon>201602261723453_migration9.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201602261958190_migration91.cs" />
-    <Compile Include="Migrations\201602261958190_migration91.Designer.cs">
-      <DependentUpon>201602261958190_migration91.cs</DependentUpon>
+    <Compile Include="Migrations\201602262123535_dan.cs" />
+    <Compile Include="Migrations\201602262123535_dan.Designer.cs">
+      <DependentUpon>201602262123535_dan.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -368,20 +352,8 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201602261730179_inial.resx">
-      <DependentUpon>201602261730179_inial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201602261646419_migration61.resx">
-      <DependentUpon>201602261646419_migration61.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201602261716264_migration7.resx">
-      <DependentUpon>201602261716264_migration7.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201602261723453_migration9.resx">
-      <DependentUpon>201602261723453_migration9.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201602261958190_migration91.resx">
-      <DependentUpon>201602261958190_migration91.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201602262123535_dan.resx">
+      <DependentUpon>201602262123535_dan.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

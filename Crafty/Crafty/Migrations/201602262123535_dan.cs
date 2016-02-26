@@ -3,10 +3,37 @@ namespace Crafty.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class inial : DbMigration
+    public partial class dan : DbMigration
     {
         public override void Up()
         {
+            CreateTable(
+                "dbo.AdminModels",
+                c => new
+                    {
+                        ID = c.Int(nullable: false, identity: true),
+                        numberOfTotalAccounts = c.Double(),
+                        numberOfPayingAccounts = c.Double(),
+                        numberOfHardLiquorAccounts = c.Double(),
+                        numberOfBeerAccounts = c.Double(),
+                        numberOfWineAccounts = c.Double(),
+                        monthlyRevenue = c.Double(),
+                        percentHardLiqourAccounts = c.Double(),
+                        percentBeerAccounts = c.Double(),
+                        percentWineAccounts = c.Double(),
+                    })
+                .PrimaryKey(t => t.ID);
+            
+            CreateTable(
+                "dbo.Boxes",
+                c => new
+                    {
+                        ID = c.Int(nullable: false, identity: true),
+                        boxName = c.String(),
+                        boxPrice = c.Double(nullable: false),
+                    })
+                .PrimaryKey(t => t.ID);
+            
             CreateTable(
                 "dbo.AlcoholProducts",
                 c => new
@@ -19,16 +46,6 @@ namespace Crafty.Migrations
                 .PrimaryKey(t => t.ID)
                 .ForeignKey("dbo.Boxes", t => t.Box_ID)
                 .Index(t => t.Box_ID);
-            
-            CreateTable(
-                "dbo.Boxes",
-                c => new
-                    {
-                        ID = c.Int(nullable: false, identity: true),
-                        boxName = c.String(),
-                        boxPrice = c.Double(nullable: false),
-                    })
-                .PrimaryKey(t => t.ID);
             
             CreateTable(
                 "dbo.Surveys",
@@ -45,7 +62,6 @@ namespace Crafty.Migrations
                         question8 = c.Int(nullable: false),
                         userID = c.String(),
                         sum = c.Int(nullable: false),
-                        productDemographic = c.String(),
                         box_ID = c.Int(),
                     })
                 .PrimaryKey(t => t.ID)
@@ -74,8 +90,9 @@ namespace Crafty.Migrations
             DropIndex("dbo.AlcoholProducts", new[] { "Box_ID" });
             DropTable("dbo.RegisteredUsers");
             DropTable("dbo.Surveys");
-            DropTable("dbo.Boxes");
             DropTable("dbo.AlcoholProducts");
+            DropTable("dbo.Boxes");
+            DropTable("dbo.AdminModels");
         }
     }
 }

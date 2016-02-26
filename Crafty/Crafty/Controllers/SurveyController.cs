@@ -117,11 +117,47 @@ namespace Crafty.Controllers
 
                 survey.box = survey.sum < 30 ? beerBox : hardLiquorBox;
 
-                if(survey.sum <30 && survey.question1 == 1)
+                if(survey.sum <30)
                 {
-                    beerBox.boxContents = new List<AlcoholProduct>() { new IPA("Ninkasi Tricerahops Double"), new IPA("some other Ale") };
-                    survey.box = beerBox;
+                    switch (survey.question1)
+                    {
+                        case 1:
+                            beerBox.boxContents = new List<AlcoholProduct>() { new IPA("Green Flash West Coast"), new IPA("Rebel Rouser IPA") };
+                            survey.box = beerBox;
+                            break;
+                        case 2:
+                            beerBox.boxContents = new List<AlcoholProduct>() { new Stout("Guinness Extra Stout"), new Stout("Breckenridge Stout") };
+                            survey.box = beerBox;
+                            break;
+                        case 3:
+                            beerBox.boxContents = new List<AlcoholProduct>() { new Lager("Bootlegger's Palomino Pale Ale"), new Lager("Samuel Adam's Botson Lager") };
+                            survey.box = beerBox;
+                            break;
+                        case 4:
+                            beerBox.boxContents = new List<AlcoholProduct>() { new Specialty("Hornsby’s Hard Cider"), new Specialty("Sprecher's Hard Root Beer") };
+                            survey.box = beerBox;
+                            break;
+                    }
                 }
+                if (survey.sum >= 30)
+                {
+                    switch (survey.question5)
+                    {
+                        case 8:
+                            hardLiquorBox.boxContents = new List<AlcoholProduct>() { new Rum("Bacardi 151"), new IPA("Captain Morgan") };
+                            survey.box = hardLiquorBox;
+                            break;
+                        case 9:
+                            hardLiquorBox.boxContents = new List<AlcoholProduct>() { new Tequila("Patron Silver"), new IPA("Cabo Wabo") };
+                            survey.box = beerBox;
+                            break;
+                        case 10:
+                            hardLiquorBox.boxContents = new List<AlcoholProduct>() { new Vodka("Grey Goose"), new IPA("Absolut") };
+                            survey.box = hardLiquorBox;
+                            break;
+                    }
+                }
+
 
 
 
@@ -140,7 +176,7 @@ namespace Crafty.Controllers
                 return View(surveyModel);
                 }*/
 
-               // db.BoxModels.Add(survey.box);
+                // db.BoxModels.Add(survey.box);
                 db.Questions.Add(survey);
                 db.SaveChanges();
                 return RedirectToAction("Purchase", "Manage");
