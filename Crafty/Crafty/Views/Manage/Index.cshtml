@@ -13,24 +13,24 @@
         if (Model.product == null)
         {
             <br />
-            <h4><a href="/Survey/Create">Complete a survey</a> to begin receiving monthly liqour boxes.</h4>
+            <h4><a href="/Survey/Create">Complete a survey</a> to begin receiving monthly liquor boxes.</h4>
         }
         else {
             <h3>Your current subscription: @Model.product</h3>
-            <h4>$@Model.boxPrice per month which includes:</h4>
+            <h4>$@Model.boxPrice per month which includes:</h4><br>
 
             foreach(string s in Model.contentNames)
             {
-                <h5>@s</h5>
+                <dt>@s</dt>
             }
-            <br />
+            <br /><br />
             <h5><a href = "/Survey/Create" > Retake our survey</a> to update your preferences.</h5>
-            <br />
+
         }
     } 
     <br />
     <h4>Change your account settings</h4>
-    <hr />
+    <hr />  
     <dl class="dl-horizontal">
         <dt>Password:</dt>
         <dd>

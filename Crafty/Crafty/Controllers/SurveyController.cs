@@ -26,15 +26,13 @@ namespace Crafty.Controllers
         {
             double numberOfTotalAccounts = adb.Users.Count();
             double numberOfPayingAccounts = db.Questions.Count();
-            double numberOfHardLiquorAccounts = db.Questions.Where(h => h.box.boxName == "Hard liquor box").Count();
-            double numberOfBeerAccounts = db.Questions.Where(b => b.box.boxName == "Beer box").Count();
-            double numberOfWineAccounts = db.Questions.Where(w => w.box.boxName == "Wine box").Count();
+            double numberOfHardLiquorAccounts = db.Questions.Where(h => h.box.boxName == "Hard Liquor Box").Count();
+            double numberOfBeerAccounts = db.Questions.Where(b => b.box.boxName == "Beer Box").Count();
 
             double monthlyRevenue = db.Questions.Select(m => m.box.boxPrice).Sum();
 
             double percentHardLiqourAccounts = numberOfHardLiquorAccounts / numberOfTotalAccounts;
             double percentBeerAccounts = numberOfBeerAccounts / numberOfTotalAccounts;
-            double percentWineAccounts = numberOfWineAccounts / numberOfTotalAccounts;
 
             return View(db.Questions.ToList());
         }
@@ -96,9 +94,9 @@ namespace Crafty.Controllers
                 //Box liquorBox = new Box("Hard liqour box", 40.00, new List<string>() { "Grey Goose", "Bacardi 151", "Patron Silver" });
 
                 Box beerBox = new Box();
-                beerBox.boxName = "Beer box";
+                beerBox.boxName = "Beer Box";
                 beerBox.boxPrice = 45.00;
-                beerBox.boxContents = new List<AlcoholProduct>() { new Lager("Sam Adams"), new IPA("Ninkasi Tricerahops Double IPA") };
+                //beerBox.boxContents = new List<AlcoholProduct>() { new Lager("Sam Adams"), new IPA("Ninkasi Tricerahops Double IPA") };
                 //beerBox.boxContents = new List<AlcoholProduct>() { new Beer("Miller Lite"), new Beer("PBR"), new Beer("GooseIsland") };
                // beerBox.boxContents = new List<string>(){ "Miller", "PBR", "Goose Island"};
 
@@ -108,9 +106,9 @@ namespace Crafty.Controllers
               ////  wineBox.boxContents = new List<string>() { "some chardony", "some zinfandel", "something else" };
 
                 Box hardLiquorBox = new Box();
-                hardLiquorBox.boxName = "Hard liquor box";
+                hardLiquorBox.boxName = "Hard Liquor Box";
                 hardLiquorBox.boxPrice = 50.00;
-                hardLiquorBox.boxContents = new List<AlcoholProduct>() { new Vodka("Grey Goose"), new Rum("Bacardi 151"), new Tequila("Patron Silver") };
+                //hardLiquorBox.boxContents = new List<AlcoholProduct>() { new Vodka("Grey Goose"), new Rum("Bacardi 151"), new Tequila("Patron Silver") };
                 //array of string names in box
 
                 //survey.box = beerBox;
@@ -144,15 +142,15 @@ namespace Crafty.Controllers
                     switch (survey.question5)
                     {
                         case 8:
-                            hardLiquorBox.boxContents = new List<AlcoholProduct>() { new Rum("Bacardi 151"), new IPA("Captain Morgan") };
+                            hardLiquorBox.boxContents = new List<AlcoholProduct>() { new Rum("Bacardi 151"), new Rum("Captain Morgan") };
                             survey.box = hardLiquorBox;
                             break;
                         case 9:
-                            hardLiquorBox.boxContents = new List<AlcoholProduct>() { new Tequila("Patron Silver"), new IPA("Cabo Wabo") };
-                            survey.box = beerBox;
+                            hardLiquorBox.boxContents = new List<AlcoholProduct>() { new Tequila("Patron Silver"), new Tequila("Cabo Wabo") };
+                            survey.box = hardLiquorBox;
                             break;
                         case 10:
-                            hardLiquorBox.boxContents = new List<AlcoholProduct>() { new Vodka("Grey Goose"), new IPA("Absolut") };
+                            hardLiquorBox.boxContents = new List<AlcoholProduct>() { new Vodka("Grey Goose"), new Vodka("Absolut") };
                             survey.box = hardLiquorBox;
                             break;
                     }
