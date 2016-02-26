@@ -24,7 +24,7 @@
                 <ul class="nav navbar-nav">
 
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    @if (User.Identity.IsAuthenticated)
+                    @if (User.Identity.IsAuthenticated && User.Identity.Name != "admin@beer.com")
                     {
                         <li> @Html.ActionLink("Take Survey", "Create", "Survey") </li>
                     }
@@ -36,7 +36,7 @@
                     <ul class="nav navbar-nav">
                         @if (User.Identity.Name == "admin@beer.com")
                         {
-                            <li> @Html.ActionLink("Survey", "/", "Survey") </li>
+                            <li> @Html.ActionLink("Account Demographics", "/", "Admins") </li>
                         }
                     </ul>
                 </div>

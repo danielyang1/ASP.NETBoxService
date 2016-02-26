@@ -140,12 +140,6 @@ namespace Crafty.Controllers
             return View(survey);
         }
 
-        //public Box getBox()
-        //{
-        //    // Box box;
-        //    box = 
-        //}
-
         // GET: Survey/Edit/5
         public ActionResult Edit(int? id)
         {
