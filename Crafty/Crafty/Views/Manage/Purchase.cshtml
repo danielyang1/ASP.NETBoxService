@@ -7,6 +7,10 @@
 
 <p class="text-success">@ViewBag.StatusMessage</p>
 
+@using (Html.BeginForm("ThankYou", "Manage"))
+{
+    @Html.AntiForgeryToken()
+
 
 <table class="table">
     <tr>
@@ -32,6 +36,9 @@
                 <p>@s</p>
             }
         </td>
+        <td>
+            <input type="submit" value="Purchase" class="btn btn-default" />
+        </td>
 </table>
 
 <div>
@@ -40,3 +47,11 @@
     <br />
 
 </div>
+
+<div class="form-group">
+    <div class="col-md-offset-2 col-md-10">
+        @*<input type="submit" value="Purchase" class="btn btn-default" />*@
+    </div>
+</div>
+
+}

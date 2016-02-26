@@ -128,8 +128,15 @@ namespace Crafty.Controllers
                 //Logins = await UserManager.GetLoginsAsync(userId),
                 //BrowserRemembered = await AuthenticationManager.TwoFactorBrowserRememberedAsync(userId)
             };
-
+            // RedirectToAction("Home", "Home");
+            //return RedirectToAction("ManageLogins", new { Message = "hello" });
             return View(model);
+            //return View();
+        }
+
+        public ActionResult ThankYou()
+        {
+            return View();
         }
 
         //
