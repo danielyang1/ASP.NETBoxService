@@ -16,10 +16,23 @@ namespace Crafty.Controllers
     public class SurveyController : Controller
     {
         private RegisteredUserDBContext db = new RegisteredUserDBContext();
+        private ApplicationDbContext adb = new ApplicationDbContext();
 
         // GET: Survey
         public ActionResult Index()
         {
+            double numberOfTotalAccounts = adb.Users.Count();
+            double numberOfPayingAccounts = db.Questions.Count();
+            double numberOfHardLiquorAccounts = db.Questions.Where(h => h.box.boxName == "Hard liquor box").Count();
+            double numberOfBeerAccounts = db.Questions.Where(b => b.box.boxName == "Beer box").Count();
+            double numberOfWineAccounts = db.Questions.Where(w => w.box.boxName == "Wine box").Count();
+
+            double monthlyRevenue = db.Questions.Select(m => m.box.boxPrice).Sum();
+
+            double percentHardLiqourAccounts = numberOfHardLiquorAccounts / numberOfTotalAccounts;
+            double percentBeerAccounts = numberOfBeerAccounts / numberOfTotalAccounts;
+            double percentWineAccounts = numberOfWineAccounts / numberOfTotalAccounts;
+
             return View(db.Questions.ToList());
         }
 
