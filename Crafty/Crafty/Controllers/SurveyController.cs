@@ -115,6 +115,7 @@ namespace Crafty.Controllers
                 hardLiquorBox.boxName = "Hard liquor box";
                 hardLiquorBox.boxPrice = 50.00;
                 hardLiquorBox.boxContents = new List<AlcoholProduct>() { new Vodka("Grey Goose"), new Rum("Bacardi 151"), new Tequila("Patron Silver") };
+                //array of string names in box
 
                 survey.box = beerBox;
 

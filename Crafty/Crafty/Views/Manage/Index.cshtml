@@ -9,8 +9,12 @@
 <div> 
     <h3>Your current box: </h3>                                                                       @*To edit this page, also edit ManageViewModel and ManageController*@
     @{ 
-        <h2>@Model.product test</h2>
+        <h4>@Model.product : $@Model.boxPrice  month</h4>
+       // foreach(var x in Model.boxcontents)
+        <a href="Survey/Create">Take survey to update your preferences</a>
     }  
+    <br />                              @*foreach loop through to get boxcontents*@
+    <br />
     <h4>Change your account settings</h4>
     <hr />
     <dl class="dl-horizontal">

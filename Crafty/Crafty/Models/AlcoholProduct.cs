@@ -8,5 +8,6 @@ namespace Crafty.Models
     public class AlcoholProduct
     {
         public int ID { get; set; }
+
     }
 }

@@ -71,6 +71,7 @@ namespace Crafty.Controllers
             {
                 product = getProduct(),
                // boxContents = getBoxContents(),
+                boxPrice = getBoxPrice(),
                 userID = getUserID(),
                 HasPassword = HasPassword(),
                 PhoneNumber = await UserManager.GetPhoneNumberAsync(userId),
@@ -372,6 +373,16 @@ namespace Crafty.Controllers
 
             return product;
 
+        }
+
+        private double getBoxPrice()
+        {
+            RegisteredUserDBContext db = new RegisteredUserDBContext();
+
+            string userID = getUserID();
+            double boxPrice = db.Questions.Select(y => y).Where(u => u.userID == userID).Select(m => m.box.boxPrice).Single();
+
+            return boxPrice;
         }
 
         //private string getBoxContents()                               //come back to this later
