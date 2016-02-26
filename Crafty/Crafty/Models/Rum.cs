@@ -15,7 +15,7 @@ namespace Crafty.Models
 
         public Rum(string name) : base(name)
         {
-            this.name = name;
+           // this.name = name;
         }
     }
 }

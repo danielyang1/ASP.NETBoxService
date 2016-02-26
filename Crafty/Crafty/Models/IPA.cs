@@ -5,16 +5,15 @@ using System.Web;
 
 namespace Crafty.Models
 {
-    public class Vodka : AlcoholProduct
+    public class IPA : AlcoholProduct
     {
-        public Vodka()
+        public IPA()
         {
 
         }
-
-        public Vodka(string name) : base(name)
+        public IPA(string name) : base(name)
         {
-           // this.name = name;
+            //this.name = name;
         }
     }
 }

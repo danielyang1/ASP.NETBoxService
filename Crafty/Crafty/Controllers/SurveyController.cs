@@ -67,7 +67,7 @@ namespace Crafty.Controllers
         {
             if (ModelState.IsValid)
             {
-                survey.sum = survey.question1 + survey.question2 + survey.question3 + survey.question4 + survey.question5 + survey.question6 + survey.question7 + survey.question8;
+                survey.sum =  survey.question4 + survey.question8;
 
                 survey.userID = User.Identity.GetUserId();
 
@@ -115,7 +115,7 @@ namespace Crafty.Controllers
                 Box beerBox = new Box();
                 beerBox.boxName = "Beer box";
                 beerBox.boxPrice = 45.00;
-                beerBox.boxContents = new List<AlcoholProduct>() { new Beer("Miller Lite"), new Beer("PBR"), new Beer("GooseIsland") };
+                //beerBox.boxContents = new List<AlcoholProduct>() { new Beer("Miller Lite"), new Beer("PBR"), new Beer("GooseIsland") };
                // beerBox.boxContents = new List<string>(){ "Miller", "PBR", "Goose Island"};
 
                 Box wineBox = new Box();
