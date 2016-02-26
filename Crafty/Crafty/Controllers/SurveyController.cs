@@ -117,6 +117,14 @@ namespace Crafty.Controllers
 
                 survey.box = survey.sum < 30 ? beerBox : hardLiquorBox;
 
+                if(survey.sum <30 && survey.question1 == 1)
+                {
+                    beerBox.boxContents = new List<AlcoholProduct>() { new IPA("Ninkasi Tricerahops Double"), new IPA("some other Ale") };
+                    survey.box = beerBox;
+                }
+
+
+
                 //int count = db.RegisteredUsers.Count(); Entity Framewor
 
 
