@@ -14,13 +14,15 @@
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
-            <h3>1. Do you drink regularly?</h3>
+            <h4>1.  Which beer do you prefer?</h4>
             <div class="col-md-10">
                 @{var listItems1 = new List<SelectListItem>
                         ()
                 {
-                new SelectListItem {Text = "Yes",   Value = "1"},
-                new SelectListItem {Text = "No", Value = "2"}
+                new SelectListItem {Text = "Ale",   Value = "7"},
+                new SelectListItem {Text = "Stout",   Value = "6"},
+                new SelectListItem {Text = "Lager", Value = "5"},
+                new SelectListItem {Text = "Specialty", Value = "4"}
                 };
 
                     @Html.DropDownListFor(m => m.question1, listItems1)
@@ -28,13 +30,13 @@
             </div>
         </div>
         <div class="form-group">
-            <h3>2. Do you consume an alcoholic beverage rather quickly or slowly?</h3>
+            <h4>2.  Do you prefer red wine or white?</h4>
             <div class="col-md-10">
                 @{var listItems2 = new List<SelectListItem>
                         ()
                 {
-                new SelectListItem {Text = "Quickly",   Value = "5"},
-                new SelectListItem {Text = "Slowly", Value = "1"}
+                new SelectListItem {Text = "Red",   Value = "0"},
+                new SelectListItem {Text = "White", Value = "1"}
                 };
 
                     @Html.DropDownListFor(m => m.question2, listItems2)
@@ -42,14 +44,14 @@
             </div>
         </div>
         <div class="form-group">
-            <h3>3. How many times have you visited a vineyard within the past 3 years?</h3>
+            <h4>3.  How many times have you visited a vineyard within the past 3 years?</h4>
             <div class="col-md-10">
                 @{var listItems3 = new List<SelectListItem>
                         ()
                 {
-                new SelectListItem {Text = "Once",   Value = "9"},
-                new SelectListItem {Text = "Twice", Value = "3"},
-                new SelectListItem {Text = "3 or more times", Value = "1"}
+                new SelectListItem {Text = "Once",   Value = "7"},
+                new SelectListItem {Text = "Twice", Value = "1"},
+                new SelectListItem {Text = "3 or more times", Value = "0"}
                 };
 
                     @Html.DropDownListFor(m => m.question3, listItems3)
@@ -57,15 +59,13 @@
             </div>
         </div>
         <div class="form-group">
-            <h3>4.  How many days a week do you consume an alcoholic beverage?</h3>
+            <h4>4.   Do you consume mixed drinks often?</h4>
             <div class="col-md-10">
                 @{var listItems4 = new List<SelectListItem>
                         ()
                 {
-                new SelectListItem {Text = "1",   Value = "1"},
-                new SelectListItem {Text = "2 - 3 days a week", Value = "2"},
-                new SelectListItem {Text = "4 - 5 days a week", Value = "3"},
-                new SelectListItem {Text = "5 - 7 days a week", Value = "5"}
+                new SelectListItem {Text = "Yes",   Value = "10"},
+                new SelectListItem {Text = "No", Value = "3"}
                 };
 
                     @Html.DropDownListFor(m => m.question4, listItems4)
@@ -73,15 +73,14 @@
             </div>
         </div>
         <div class="form-group">
-            <h3>5.  Do you often consume mixed drinks?</h3>
+            <h4>5.  Do you prefer Pina coladas, Margaritas or Bloody Marys?</h4>
             <div class="col-md-10">
                 @{var listItems5 = new List<SelectListItem>
                         ()
                 {
-               new SelectListItem {Text = "1",   Value = "1"},
-               new SelectListItem {Text = "2 - 3 days a week", Value = "3"},
-               new SelectListItem {Text = "4 - 5 days a week", Value = "4"},
-               new SelectListItem {Text = "5 - 7 days a week", Value = "10"}
+                new SelectListItem {Text = "Pina coladas", Value = "8"},
+                new SelectListItem {Text = "Margaritas", Value = "9"},
+                new SelectListItem {Text = "Bloody Marys", Value = "10"}
                 };
 
                     @Html.DropDownListFor(m => m.question5, listItems5)
@@ -89,7 +88,7 @@
             </div>
         </div>
         <div class="form-group">
-            <h3>6.  How many times have you visited a brewery within the past 3 years?</h3>
+            <h4>6.  How many times have you visited a brewery within the past 3 years?</h4>
             <div class="col-md-10">
                 @{var listItems6 = new List<SelectListItem>
                         ()
@@ -104,12 +103,12 @@
             </div>
         </div>
         <div class="form-group">
-            <h3>7. How many times have you visited a distillery within the past 3 years?</h3>
+            <h4>7.  How many times have you visited a distillery within the past 3 years?</h4>
             <div class="col-md-10">
                 @{var listItems7 = new List<SelectListItem>
                         ()
                 {
-                new SelectListItem {Text = "Once",   Value = "1"},
+                new SelectListItem {Text = "Once",   Value = "0"},
                 new SelectListItem {Text = "Twice", Value = "4"},
                 new SelectListItem {Text = "3 or more times", Value = "10"}
                 };
@@ -119,13 +118,13 @@
             </div>
         </div>
         <div class="form-group">
-            <h3>8.  If you do drink spirits, are they of a high alcoholic volume?</h3>
+            <h4>8.  If you do drink spirits, are they of a high alcoholic volume?</h4>
             <div class="col-md-10">
                 @{var listItems8 = new List<SelectListItem>
                         ()
                 {
                 new SelectListItem {Text = "Yes",   Value = "10"},
-                new SelectListItem {Text = "No", Value = "1"}
+                new SelectListItem {Text = "No", Value = "5"}
                 };
 
                     @Html.DropDownListFor(m => m.question8, listItems8)
