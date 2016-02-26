@@ -229,18 +229,19 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AlcoholProduct.cs" />
-    <Compile Include="Models\Beer.cs" />
     <Compile Include="Models\Box.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\IPA.cs" />
+    <Compile Include="Models\Lager.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\RegisteredUserModel.cs" />
     <Compile Include="Models\RoleActions.cs" />
     <Compile Include="Models\Rum.cs" />
+    <Compile Include="Models\Stout.cs" />
     <Compile Include="Models\Survey.cs" />
     <Compile Include="Models\RegisteredUserDBContext.cs" />
     <Compile Include="Models\Tequila.cs" />
     <Compile Include="Models\Vodka.cs" />
-    <Compile Include="Models\Wine.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>

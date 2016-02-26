@@ -5,17 +5,17 @@ using System.Web;
 
 namespace Crafty.Models
 {
-    public class Beer : AlcoholProduct
+    public class Lager : AlcoholProduct
     {
 
-        public Beer()
+        public Lager()
         {
 
         }
 
-        public Beer(string name) :base(name)
+        public Lager(string name) :base(name)
         {
-            this.name = name;
+           // this.name = name;
         }
     }
 }
