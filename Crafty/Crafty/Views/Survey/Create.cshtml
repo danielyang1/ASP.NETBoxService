@@ -19,9 +19,9 @@
                 @{var listItems1 = new List<SelectListItem>
                         ()
                 {
-                new SelectListItem {Text = "Ale",   Value = "7"},
-                new SelectListItem {Text = "Stout",   Value = "6"},
-                new SelectListItem {Text = "Lager", Value = "5"},
+                new SelectListItem {Text = "Ale",   Value = "1"},
+                new SelectListItem {Text = "Stout",   Value = "2"},
+                new SelectListItem {Text = "Lager", Value = "3"},
                 new SelectListItem {Text = "Specialty", Value = "4"}
                 };
 
@@ -44,14 +44,13 @@
             </div>
         </div>
         <div class="form-group">
-            <h4>3.  Do you like your prefer ?</h4> 
+            <h4>3.  Do you prefer your drink Cold or at Room temperature?</h4> 
             <div class="col-md-10">
                 @{var listItems3 = new List<SelectListItem>
                         ()
                 {
-                new SelectListItem {Text = "Once",   Value = "7"},
-                new SelectListItem {Text = "Twice", Value = "1"},
-                new SelectListItem {Text = "3 or more times", Value = "0"}
+                new SelectListItem {Text = "Cold",   Value = "1"},
+                new SelectListItem {Text = "Room temperature", Value = "10"}
                 };
 
                     @Html.DropDownListFor(m => m.question3, listItems3)
@@ -64,8 +63,8 @@
                 @{var listItems4 = new List<SelectListItem>
                         ()
                 {
-                new SelectListItem {Text = "Yes",   Value = "10"},
-                new SelectListItem {Text = "No", Value = "1"}
+                new SelectListItem {Text = "No", Value = "1"},
+                new SelectListItem {Text = "Yes",   Value = "10"}
                 };
 
                     @Html.DropDownListFor(m => m.question4, listItems4)
@@ -93,9 +92,9 @@
                 @{var listItems6 = new List<SelectListItem>
                         ()
                  {
-                new SelectListItem {Text = "Once",   Value = "5"},
-                new SelectListItem {Text = "Twice", Value = "7"},
-                new SelectListItem {Text = "3 or more times", Value = "10"}
+                new SelectListItem {Text = "3 or more times", Value = "0"},
+                new SelectListItem {Text = "Twice", Value = "1"},
+                new SelectListItem {Text = "Once",   Value = "10"},
                 };
 
                     @Html.DropDownListFor(m => m.question6, listItems6)
@@ -108,8 +107,8 @@
                 @{var listItems7 = new List<SelectListItem>
                         ()
                 {
-                new SelectListItem {Text = "Once",   Value = "1"},
-                new SelectListItem {Text = "Twice", Value = "5"},
+                new SelectListItem {Text = "Once",   Value = "0"},
+                new SelectListItem {Text = "Twice", Value = "10"},
                 new SelectListItem {Text = "3 or more times", Value = "10"}
                 };
 
@@ -123,8 +122,8 @@
                 @{var listItems8 = new List<SelectListItem>
                         ()
                 {
+                new SelectListItem {Text = "No", Value = "1"},
                 new SelectListItem {Text = "Yes",   Value = "10"},
-                new SelectListItem {Text = "No", Value = "1"}
                 };
 
                     @Html.DropDownListFor(m => m.question8, listItems8)

@@ -73,7 +73,7 @@ namespace Crafty.Controllers
 
             if (ModelState.IsValid)
             {
-                survey.sum =  survey.question4 + survey.question8;
+                survey.sum = survey.question2 + survey.question4 + survey.question6 + survey.question7 + survey.question8;
 
                 survey.userID = User.Identity.GetUserId();
 
@@ -98,13 +98,14 @@ namespace Crafty.Controllers
                 Box beerBox = new Box();
                 beerBox.boxName = "Beer box";
                 beerBox.boxPrice = 45.00;
+                beerBox.boxContents = new List<AlcoholProduct>() { new Lager("Sam Adams"), new IPA("Ninkasi Tricerahops Double IPA") };
                 //beerBox.boxContents = new List<AlcoholProduct>() { new Beer("Miller Lite"), new Beer("PBR"), new Beer("GooseIsland") };
                // beerBox.boxContents = new List<string>(){ "Miller", "PBR", "Goose Island"};
 
-                Box wineBox = new Box();
-                wineBox.boxName = "Wine box";
-                wineBox.boxPrice = 35.00;
-              //  wineBox.boxContents = new List<string>() { "some chardony", "some zinfandel", "something else" };
+              //  Box wineBox = new Box(); ***Delete No More Wine!!!!***
+              //  wineBox.boxName = "Wine box";
+              //  wineBox.boxPrice = 35.00;
+              ////  wineBox.boxContents = new List<string>() { "some chardony", "some zinfandel", "something else" };
 
                 Box hardLiquorBox = new Box();
                 hardLiquorBox.boxName = "Hard liquor box";
@@ -112,9 +113,9 @@ namespace Crafty.Controllers
                 hardLiquorBox.boxContents = new List<AlcoholProduct>() { new Vodka("Grey Goose"), new Rum("Bacardi 151"), new Tequila("Patron Silver") };
                 //array of string names in box
 
-                survey.box = beerBox;
+                //survey.box = beerBox;
 
-                survey.box = survey.sum < 10 ? beerBox : survey.sum < 20 ? wineBox : hardLiquorBox;
+                survey.box = survey.sum < 30 ? beerBox : hardLiquorBox;
 
                 //int count = db.RegisteredUsers.Count(); Entity Framewor
 
