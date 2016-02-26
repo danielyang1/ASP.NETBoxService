@@ -9,12 +9,12 @@ namespace Crafty.Models
     {
         public Vodka()
         {
-
+            
         }
 
         public Vodka(string name) : base(name)
         {
-           // this.name = name;
+
         }
     }
 }

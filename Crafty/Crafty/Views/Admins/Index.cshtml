@@ -1,0 +1,30 @@
+﻿@model Crafty.Models.AdminModel
+@{
+    ViewBag.Title = "Admin Page";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<p class="text-success">@ViewBag.StatusMessage</p>
+<div>
+    @*To edit this page, also edit ManageViewModel and ManageController*@
+    @{
+        //IF NO SUBSCRIBERS / REVENUE:.....
+        //IF USER HAS NOT TAKEN TEST, THEN DON'T SHOW THIS OR SHOW NULL OR SOMETHING. THIS IS A BUG
+        <h4>Total accounts: @Model.numberOfTotalAccounts</h4>
+        <h4>Total subscribers: @Model.numberOfPayingAccounts</h4>
+        <h4>Total beer monthly subscribers: @Model.numberOfBeerAccounts</h4>
+        <h4>Total hard monthly liquor: @Model.numberOfHardLiquorAccounts</h4>
+        <br />
+        @*@if(Model.numberOfBeerAccounts == 0)
+        {
+            <h4>0</h4>
+        }*@
+        @*<h4>Percent beer subscribers: @if(Model.numberOfBeerAccounts == 0) 0 else(@Model.percentBeerAccounts)</h4>
+        <h4>Percent hard liquor subscribers: @Model.percentHardLiqourAccounts</h4>
+        <br />
+        <h4>Monthly Revenue: $@Model.monthlyRevenue</h4>*@
+    }
+    <br />
+
+</div>

@@ -13,7 +13,7 @@ namespace Crafty.Models
         }
         public IPA(string name) : base(name)
         {
-            //this.name = name;
+
         }
     }
 }

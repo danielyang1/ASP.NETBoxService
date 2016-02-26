@@ -1,0 +1,91 @@
+﻿@model Crafty.Models.Admin
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Admin</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.numberOfTotalAccounts)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.numberOfTotalAccounts)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.numberOfPayingAccounts)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.numberOfPayingAccounts)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.numberOfHardLiquorAccounts)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.numberOfHardLiquorAccounts)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.numberOfBeerAccounts)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.numberOfBeerAccounts)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.numberOfWineAccounts)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.numberOfWineAccounts)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.monthlyRevenue)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.monthlyRevenue)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.percentHardLiqourAccounts)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.percentHardLiqourAccounts)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.percentBeerAccounts)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.percentBeerAccounts)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.percentWineAccounts)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.percentWineAccounts)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

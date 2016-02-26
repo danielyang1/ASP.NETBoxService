@@ -15,7 +15,7 @@ namespace Crafty.Models
 
         public Lager(string name) :base(name)
         {
-           // this.name = name;
+
         }
     }
 }

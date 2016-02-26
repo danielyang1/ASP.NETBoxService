@@ -70,7 +70,6 @@ namespace Crafty.Controllers
             var model = new IndexViewModel
             {
                 product = getProduct(),
-                // boxContents = getBoxContents(),
                 contentNames = getNamesofBoxContents(),
                 boxPrice = getBoxPrice(),
                 userID = getUserID(),
@@ -112,6 +111,25 @@ namespace Crafty.Controllers
         public ActionResult AddPhoneNumber()
         {
             return View();
+        }
+
+        public ActionResult Purchase()
+        {
+            var model = new IndexViewModel
+            {
+                product = getProduct(),
+                contentNames = getNamesofBoxContents(),
+                //boxName = getBoxName(),
+                boxPrice = getBoxPrice(),
+                userID = getUserID(),
+                HasPassword = HasPassword(),
+                //PhoneNumber = await UserManager.GetPhoneNumberAsync(userId),
+                //TwoFactor = await UserManager.GetTwoFactorEnabledAsync(userId),
+                //Logins = await UserManager.GetLoginsAsync(userId),
+                //BrowserRemembered = await AuthenticationManager.TwoFactorBrowserRememberedAsync(userId)
+            };
+
+            return View(model);
         }
 
         //
@@ -414,22 +432,7 @@ namespace Crafty.Controllers
                 {
                     listOfProductNames.Add(s.name);
                 }
-
-               // var boxID = db.Questions.Where(x => x.userID == userID).Select(q => q.box.ID).ToList();
-
-                //var pn = db.AlcoholProducts.Include(z => z.Box_ID).First();
-
-               // var sessions = _webinarRecordingsDB.WebinarSessions.Where(w => w.SessionSubjects.Any(s => s.ProductLine == productLine));
-
-                //var b = db.Questions.Where(v => v.userID == userID.Any(c => c.))
-
-                //var pn = db.Questions.Where(u => u.userID == userID).Select(t => t.box).Where(x => x.boxContents)
-
-                //listOfProductNames.Add(productName);
-                //boxPrice = db.Questions.Select(y => y).Where(u => u.userID == userID).Select(m => m.box.boxPrice).Single();
             }
-
-
             return listOfProductNames;
 
         }

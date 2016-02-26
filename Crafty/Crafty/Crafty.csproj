@@ -203,6 +203,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AdminsController.cs" />
     <Compile Include="Controllers\BoxModelsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -222,8 +223,25 @@
     <Compile Include="Migrations\201602261730179_inial.Designer.cs">
       <DependentUpon>201602261730179_inial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201602261646419_migration61.cs" />
+    <Compile Include="Migrations\201602261646419_migration61.Designer.cs">
+      <DependentUpon>201602261646419_migration61.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201602261716264_migration7.cs" />
+    <Compile Include="Migrations\201602261716264_migration7.Designer.cs">
+      <DependentUpon>201602261716264_migration7.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201602261723453_migration9.cs" />
+    <Compile Include="Migrations\201602261723453_migration9.Designer.cs">
+      <DependentUpon>201602261723453_migration9.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201602261958190_migration91.cs" />
+    <Compile Include="Migrations\201602261958190_migration91.Designer.cs">
+      <DependentUpon>201602261958190_migration91.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\AdminModel.cs" />
     <Compile Include="Models\AlcoholProduct.cs" />
     <Compile Include="Models\Box.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -328,6 +346,12 @@
     <Content Include="Views\BoxModels\Edit.cshtml" />
     <Content Include="Views\BoxModels\Index.cshtml" />
     <Content Include="Views\Survey\ThankYou.cshtml" />
+    <Content Include="Views\Admins\Create.cshtml" />
+    <Content Include="Views\Admins\Delete.cshtml" />
+    <Content Include="Views\Admins\Details.cshtml" />
+    <Content Include="Views\Admins\Edit.cshtml" />
+    <Content Include="Views\Admins\Index.cshtml" />
+    <Content Include="Views\Manage\Purchase.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -346,6 +370,18 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201602261730179_inial.resx">
       <DependentUpon>201602261730179_inial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602261646419_migration61.resx">
+      <DependentUpon>201602261646419_migration61.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602261716264_migration7.resx">
+      <DependentUpon>201602261716264_migration7.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602261723453_migration9.resx">
+      <DependentUpon>201602261723453_migration9.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602261958190_migration91.resx">
+      <DependentUpon>201602261958190_migration91.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -14,7 +14,7 @@ namespace Crafty.Models
         }
         public Tequila(string name) : base(name)
         {
-           // this.name = name;
+
         }
     }
 }
