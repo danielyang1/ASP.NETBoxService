@@ -66,11 +66,12 @@ namespace Crafty.Controllers
                 : message == ManageMessageId.RemovePhoneSuccess ? "Your phone number was removed."
                 : "";
 
-            var userId = User.Identity.GetUserId();
+            var userId = User.Identity.GetUserId();            //this is causing an error
             var model = new IndexViewModel
             {
                 product = getProduct(),
-               // boxContents = getBoxContents(),
+                // boxContents = getBoxContents(),
+                contentNames = getNamesofBoxContents(),
                 boxPrice = getBoxPrice(),
                 userID = getUserID(),
                 HasPassword = HasPassword(),
@@ -364,39 +365,79 @@ namespace Crafty.Controllers
             return userID;
         }
 
-        private string getProduct()                                       //1234
+        private string getProduct()                               
         {
             RegisteredUserDBContext db = new RegisteredUserDBContext();
 
             string userID = getUserID();
-            string product = db.Questions.Select(y => y).Where(u => u.userID == userID).Select(m => m.box.boxName).Single();
-
+            string product;
+            var hasUserAlreadyTakenSurvey = db.Questions.Where(y => y.userID == userID).FirstOrDefault();
+            if (hasUserAlreadyTakenSurvey != null)
+            {
+                product = db.Questions.Select(y => y).Where(u => u.userID == userID).Select(m => m.box.boxName).Single();
+            }
+            else product = null;
             return product;
-
         }
 
-        private double getBoxPrice()
+        private double? getBoxPrice()
         {
             RegisteredUserDBContext db = new RegisteredUserDBContext();
 
             string userID = getUserID();
-            double boxPrice = db.Questions.Select(y => y).Where(u => u.userID == userID).Select(m => m.box.boxPrice).Single();
+            double? boxPrice;
+
+            var hasUserAlreadyTakenSurvey = db.Questions.Where(y => y.userID == userID).FirstOrDefault();
+            if (hasUserAlreadyTakenSurvey != null)
+            {
+                boxPrice = db.Questions.Select(y => y).Where(u => u.userID == userID).Select(m => m.box.boxPrice).Single();
+            }
+            else boxPrice = null;
 
             return boxPrice;
         }
 
-        //private string getBoxContents()                               //come back to this later
-        //{
-        //    RegisteredUserDBContext db = new RegisteredUserDBContext();
+        public List<string> getNamesofBoxContents()
+        {
+            string userID = getUserID();
+            RegisteredUserDBContext db = new RegisteredUserDBContext();
 
-        //    string userID = getUserID();
-        //   // string boxContents = db.Questions.Select(y => y).Where(u => u.userID == userID).Select(m => m.box.boxContents[0].ID).Single();
-        //   // List<string> boxContents;
-        //}
+            List<string> listOfProductNames = new List<string>();
+
+            var hasUserAlreadyTakenSurvey = db.Questions.Where(y => y.userID == userID).FirstOrDefault();
+
+            if (hasUserAlreadyTakenSurvey != null)
+            {
+                var productNames = db.Questions.Where(u => u.userID == userID).Select(m => m.box.boxContents).Single();
+
+                foreach(AlcoholProduct s in productNames)
+                {
+                    listOfProductNames.Add(s.name);
+                }
+
+               // var boxID = db.Questions.Where(x => x.userID == userID).Select(q => q.box.ID).ToList();
+
+                //var pn = db.AlcoholProducts.Include(z => z.Box_ID).First();
+
+               // var sessions = _webinarRecordingsDB.WebinarSessions.Where(w => w.SessionSubjects.Any(s => s.ProductLine == productLine));
+
+                //var b = db.Questions.Where(v => v.userID == userID.Any(c => c.))
+
+                //var pn = db.Questions.Where(u => u.userID == userID).Select(t => t.box).Where(x => x.boxContents)
+
+                //listOfProductNames.Add(productName);
+                //boxPrice = db.Questions.Select(y => y).Where(u => u.userID == userID).Select(m => m.box.boxPrice).Single();
+            }
+
+
+            return listOfProductNames;
+
+        }
+
 
         private bool HasPassword()
         {
-            var user = UserManager.FindById(User.Identity.GetUserId());
+            var user = UserManager.FindById(User.Identity.GetUserId());             //this is causing an error
             if (user != null)
             {
                 return user.PasswordHash != null;

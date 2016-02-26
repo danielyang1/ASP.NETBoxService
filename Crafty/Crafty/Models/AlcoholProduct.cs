@@ -7,7 +7,16 @@ namespace Crafty.Models
 {
     public class AlcoholProduct
     {
-        public int ID { get; set; }
+        public AlcoholProduct(string name)
+        {
+            this.name = name;
+        }
 
+        public AlcoholProduct()
+        {
+
+        }
+        public int ID { get; set; }
+        public string name { get; set; }
     }
 }

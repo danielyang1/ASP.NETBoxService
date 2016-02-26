@@ -7,9 +7,12 @@ namespace Crafty.Models
 {
     public class Vodka : AlcoholProduct
     {
-        public string name;
+        public Vodka()
+        {
 
-        public Vodka(string name)
+        }
+
+        public Vodka(string name) : base(name)
         {
             this.name = name;
         }

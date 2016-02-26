@@ -234,6 +234,18 @@
     <Compile Include="Migrations\201602252222439_migration3.Designer.cs">
       <DependentUpon>201602252222439_migration3.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201602260011028_migration4.cs" />
+    <Compile Include="Migrations\201602260011028_migration4.Designer.cs">
+      <DependentUpon>201602260011028_migration4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201602260213347_migration31.cs" />
+    <Compile Include="Migrations\201602260213347_migration31.Designer.cs">
+      <DependentUpon>201602260213347_migration31.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201602260232305_migration41.cs" />
+    <Compile Include="Migrations\201602260232305_migration41.Designer.cs">
+      <DependentUpon>201602260232305_migration41.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AlcoholProduct.cs" />
@@ -365,6 +377,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201602252222439_migration3.resx">
       <DependentUpon>201602252222439_migration3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602260011028_migration4.resx">
+      <DependentUpon>201602260011028_migration4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602260213347_migration31.resx">
+      <DependentUpon>201602260213347_migration31.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602260232305_migration41.resx">
+      <DependentUpon>201602260232305_migration41.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

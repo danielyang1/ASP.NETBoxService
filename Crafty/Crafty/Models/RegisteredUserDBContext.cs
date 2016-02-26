@@ -20,6 +20,8 @@ namespace Crafty.Models
         public DbSet<Survey> Questions { get; set; }
 
         public System.Data.Entity.DbSet<Crafty.Models.Box> BoxModels { get; set; }
+
+        public DbSet<AlcoholProduct> AlcoholProducts { get; set; }
         //this is where we can add more tables to database
     }
 

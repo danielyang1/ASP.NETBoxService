@@ -72,7 +72,6 @@ namespace Crafty.Controllers
 
                 //if user exists in survey database, delete user row
 
-                //1234 rebuild database after lunch
 
                 //using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["DefaultConnection"].ToString()))            //SQL connection; this kind of works
                 //{
