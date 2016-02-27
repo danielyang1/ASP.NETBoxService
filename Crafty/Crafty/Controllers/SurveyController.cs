@@ -204,14 +204,7 @@ namespace Crafty.Controllers
         {
 
             string userID = User.Identity.GetUserId();
-
-
-
-            var user =
-    (from c in db.Questions
-     where c.userID == userID
-     select c).First();
-
+            var user = db.Questions.Where(c => c.userID == userID).Select(c => c).First();
             user.isSubscribed = true;
 
             db.SaveChanges();
