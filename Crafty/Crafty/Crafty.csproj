@@ -219,9 +219,9 @@
     <Compile Include="MasterPage.Master.designer.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201602262123535_dan.cs" />
-    <Compile Include="Migrations\201602262123535_dan.Designer.cs">
-      <DependentUpon>201602262123535_dan.cs</DependentUpon>
+    <Compile Include="Migrations\201602262351559_migration12.cs" />
+    <Compile Include="Migrations\201602262351559_migration12.Designer.cs">
+      <DependentUpon>201602262351559_migration12.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -329,13 +329,13 @@
     <Content Include="Views\BoxModels\Details.cshtml" />
     <Content Include="Views\BoxModels\Edit.cshtml" />
     <Content Include="Views\BoxModels\Index.cshtml" />
-    <Content Include="Views\Survey\ThankYou.cshtml" />
     <Content Include="Views\Admins\Create.cshtml" />
     <Content Include="Views\Admins\Delete.cshtml" />
     <Content Include="Views\Admins\Details.cshtml" />
     <Content Include="Views\Admins\Edit.cshtml" />
     <Content Include="Views\Admins\Index.cshtml" />
     <Content Include="Views\Manage\Purchase.cshtml" />
+    <Content Include="Views\Survey\ThankYou.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -352,8 +352,8 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201602262123535_dan.resx">
-      <DependentUpon>201602262123535_dan.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201602262351559_migration12.resx">
+      <DependentUpon>201602262351559_migration12.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -129,9 +129,9 @@ namespace Crafty.Controllers
                 //BrowserRemembered = await AuthenticationManager.TwoFactorBrowserRememberedAsync(userId)
             };
             // RedirectToAction("Home", "Home");
-            //return RedirectToAction("ManageLogins", new { Message = "hello" });
+            //return RedirectToAction("Survey", "ThankYou");
+           // return View(model);
             return View(model);
-            //return View();
         }
 
         public ActionResult ThankYou()

@@ -22,5 +22,6 @@ namespace Crafty.Models
         public int sum { get; set; }
      //   public string productDemographic { get; set; }     
         public Box box { get; set; }
+        public bool isSubscribed { get; set; }
     }
 }

@@ -18,8 +18,6 @@ namespace Crafty.Controllers
         private RegisteredUserDBContext db = new RegisteredUserDBContext();
         private ApplicationDbContext adb = new ApplicationDbContext();
 
-        Survey s = new Survey();
-        Box box;
 
         // GET: Survey
         public ActionResult Index()
@@ -69,8 +67,6 @@ namespace Crafty.Controllers
         public ActionResult Create([Bind(Include = "ID,question1,question2,question3,question4,question5,question6,question7,question8,sum")] Survey survey)
         {
 
-            s = survey;
-
             if (ModelState.IsValid)
             {
                 survey.sum = survey.question2 + survey.question4 + survey.question6 + survey.question7 + survey.question8;
@@ -116,6 +112,7 @@ namespace Crafty.Controllers
                 //survey.box = beerBox;
 
                 survey.box = survey.sum < 30 ? beerBox : hardLiquorBox;
+                survey.isSubscribed = false;
 
                 if(survey.sum <30)
                 {
@@ -179,11 +176,15 @@ namespace Crafty.Controllers
                 // db.BoxModels.Add(survey.box);
                 db.Questions.Add(survey);
                 db.SaveChanges();
-                return RedirectToAction("Purchase", "Manage");
+                //return RedirectToAction("Purchase", "Manage"); //this RUNS purchase() in manageController -- NOT what we want
+                //return RedirectToRoute("Manage", "Purchase");
+                return Redirect("~/Manage/Purchase");
             }
 
             return View(survey);
         }
+
+        //in SurveyController? Add to database if purchase()
 
         // GET: Survey/Edit/5
         public ActionResult Edit(int? id)
@@ -243,7 +244,34 @@ namespace Crafty.Controllers
         }
         public ActionResult ThankYou(Survey survey)  // https://github.com/mcmadmac11/LastBoxRepo/blob/master/LastBox/Controllers/SurveyModelsController.cs
         {
-            s = survey;
+
+            string userID = User.Identity.GetUserId();
+
+
+            //var user = db.Questions.Where(y => y.userID == userID);
+            //var user.isSubscribed = true;
+
+            var user =
+    (from c in db.Questions
+     where c.userID == userID
+     select c).First();
+
+            user.isSubscribed = true;
+
+            db.SaveChanges();
+
+            //var
+            //if (hasUserAlreadyTakenSurvey != null)
+            //{
+            //    product = db.Questions.Select(y => y).Where(u => u.userID == userID).Select(m => m.box.boxName).Single();
+            //}
+            //else product = null;
+            ////return product;
+
+            //survey.isSubscribed = true;
+            //db.Questions.Add(survey);
+            //db.SaveChanges();
+            //  return Redirect("~/Home/");
             return View();
         }
 

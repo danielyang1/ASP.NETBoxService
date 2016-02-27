@@ -7,13 +7,13 @@ namespace Crafty.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class migration4 : IMigrationMetadata
+    public sealed partial class migration12 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(migration4));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(migration12));
         
         string IMigrationMetadata.Id
         {
-            get { return "201602261428206_migration4"; }
+            get { return "201602262351559_migration12"; }
         }
         
         string IMigrationMetadata.Source
