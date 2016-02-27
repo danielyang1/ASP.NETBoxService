@@ -28,8 +28,8 @@ namespace Crafty.Controllers
 
                 monthlyRevenue = getMonthlyRevenue(),
 
-                percentHardLiqourAccounts = db.Questions.Where(h => h.box.boxName == "Hard Liquor Box").Count() / getNumberOfPayingAccounts(),
-                percentBeerAccounts = db.Questions.Where(b => b.box.boxName == "Beer Box").Count() / getNumberOfPayingAccounts(),
+                percentHardLiqourAccounts = (db.Questions.Where(h => h.isSubscribed == true).Where(a => a.box.boxName == "Hard Liquor Box").Count() / getNumberOfPayingAccounts()) * 100,
+                percentBeerAccounts = (db.Questions.Where(b => b.isSubscribed == true).Where(n => n.box.boxName == "Beer Box").Count() / getNumberOfPayingAccounts()) * 100,
             };
             return View(model);
         }

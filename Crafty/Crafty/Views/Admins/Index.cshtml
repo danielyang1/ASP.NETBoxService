@@ -16,14 +16,20 @@
         <h4>Total beer monthly subscribers: @Model.numberOfBeerAccounts</h4>
         <h4>Total hard monthly liquor subscribers: @Model.numberOfHardLiquorAccounts</h4>
         <br />
-        @*@if(Model.numberOfBeerAccounts == 0)
+
+        if(Model.numberOfPayingAccounts == 0)
         {
-            <h4>0</h4>
-        }*@
-        @*<h4>Percent beer subscribers: @if(Model.numberOfBeerAccounts == 0) 0 else(@Model.percentBeerAccounts)</h4>
-        <h4>Percent hard liquor subscribers: @Model.percentHardLiqourAccounts</h4>
+            <h4>Percent beer suscribers:</h4>
+            <h4>Percent hard liquor subscribers: </h4>
+        }
+        else
+        {
+            <h4>Percent beer subscribers: @Math.Round((double)Model.percentBeerAccounts, 2)</h4>
+            <h4>Percent hard liquor subscribers: @Math.Round((double)Model.percentHardLiqourAccounts, 2)</h4>
+        }
+
         <br />
-        <h4>Monthly Revenue: $@Model.monthlyRevenue</h4>*@
+        <h4>Monthly Revenue: $@Model.monthlyRevenue</h4>
     }
     <br />
 
