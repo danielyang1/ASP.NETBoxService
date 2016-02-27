@@ -3,7 +3,7 @@ namespace Crafty.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class migration12 : DbMigration
+    public partial class migration3 : DbMigration
     {
         public override void Up()
         {
@@ -16,11 +16,9 @@ namespace Crafty.Migrations
                         numberOfPayingAccounts = c.Double(),
                         numberOfHardLiquorAccounts = c.Double(),
                         numberOfBeerAccounts = c.Double(),
-                        numberOfWineAccounts = c.Double(),
                         monthlyRevenue = c.Double(),
                         percentHardLiqourAccounts = c.Double(),
                         percentBeerAccounts = c.Double(),
-                        percentWineAccounts = c.Double(),
                     })
                 .PrimaryKey(t => t.ID);
             

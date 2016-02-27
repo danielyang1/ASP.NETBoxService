@@ -219,9 +219,9 @@
     <Compile Include="MasterPage.Master.designer.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201602262351559_migration12.cs" />
-    <Compile Include="Migrations\201602262351559_migration12.Designer.cs">
-      <DependentUpon>201602262351559_migration12.cs</DependentUpon>
+    <Compile Include="Migrations\201602270222220_migration3.cs" />
+    <Compile Include="Migrations\201602270222220_migration3.Designer.cs">
+      <DependentUpon>201602270222220_migration3.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -352,8 +352,8 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201602262351559_migration12.resx">
-      <DependentUpon>201602262351559_migration12.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201602270222220_migration3.resx">
+      <DependentUpon>201602270222220_migration3.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

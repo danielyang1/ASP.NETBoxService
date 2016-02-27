@@ -35,10 +35,10 @@ namespace Crafty.Controllers
         }
 
 
-        private double? getNumberOfTotalAccounts()        //THIS SHOULD NOT INCLUDE ADMIN?
+        private double? getNumberOfTotalAccounts()        //should this count include admin? if no, then -1
         {
             double? numberOfTotalAccounts;
-            var isDatabaseEmpty = db.Questions.Select(y => y).FirstOrDefault();
+            var isDatabaseEmpty = adb.Users.Select(y => y).FirstOrDefault();
             if (isDatabaseEmpty != null)
             {
                 numberOfTotalAccounts = adb.Users.Count();
@@ -59,22 +59,10 @@ namespace Crafty.Controllers
             return numberOfPayingAccounts;
         }
 
-        //private double? getNumberOfHardLiquorAccounts()
-        //{
-        //    double? numberOfHardLiquorAccounts;
-        //    var anyBeerDrinkers = db.Questions.Where(b => b.box.boxName == "Beer box").Count();
-        //    if(anyBeerDrinkers != null)
-        //    {
-        //        numberOfHardLiquorAccounts = db.Questions.Where(b => b.box.boxName == "Beer box").Count();
-        //    }
-        //    else numberOfHardLiquorAccounts = null;
-        //    return numberOfHardLiquorAccounts;
-        //}
-
         private double? getMonthlyRevenue()
         {
             double? monthlyRevenue;
-            var anyRevenue = db.Questions.Select(m => m.box.boxPrice).FirstOrDefault();       //AND isSubscribed = true;
+            var anyRevenue = db.Questions.Select(m => m.box.boxPrice).FirstOrDefault();
             if (anyRevenue != 0)
             {
                 monthlyRevenue = db.Questions.Where(n => n.isSubscribed == true).Select(m => m.box.boxPrice).Sum();

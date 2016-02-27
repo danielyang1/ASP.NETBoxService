@@ -7,10 +7,8 @@
 
 <p class="text-success">@ViewBag.StatusMessage</p>
 <div>
-    @*To edit this page, also edit ManageViewModel and ManageController*@
+    <br />
     @{
-        //IF NO SUBSCRIBERS / REVENUE:.....
-        //IF USER HAS NOT TAKEN TEST, THEN DON'T SHOW THIS OR SHOW NULL OR SOMETHING. THIS IS A BUG
         <h4>Total accounts: @Model.numberOfTotalAccounts</h4>
         <h4>Total subscribers: @Model.numberOfPayingAccounts</h4>
         <h4>Total beer monthly subscribers: @Model.numberOfBeerAccounts</h4>
