@@ -22,8 +22,9 @@ namespace Crafty.Controllers
             {
                 numberOfTotalAccounts = getNumberOfTotalAccounts(),
                 numberOfPayingAccounts = getNumberOfPayingAccounts(),
-                numberOfHardLiquorAccounts = db.Questions.Where(h => h.box.boxName == "Hard Liquor Box").Count(),
-                numberOfBeerAccounts = db.Questions.Where(b => b.box.boxName == "Beer Box").Count(),
+
+                numberOfHardLiquorAccounts = db.Questions.Where(h => h.isSubscribed == true).Where(a => a.box.boxName == "Hard Liquor Box").Count(),
+                numberOfBeerAccounts = db.Questions.Where(b => b.isSubscribed == true).Where(n => n.box.boxName == "Beer Box").Count(),
 
                 monthlyRevenue = getMonthlyRevenue(),
 
@@ -46,7 +47,7 @@ namespace Crafty.Controllers
             return numberOfTotalAccounts;
         }
 
-        private double? getNumberOfPayingAccounts()      //THIS SHOULD ONLY INCLUDE PAYING "TRUE" SUBSCRIBERS
+        private double? getNumberOfPayingAccounts()     
         {
             double? numberOfPayingAccounts;
             var isDatabaseEmpty = db.Questions.Select(y => y).FirstOrDefault();
@@ -73,10 +74,10 @@ namespace Crafty.Controllers
         private double? getMonthlyRevenue()
         {
             double? monthlyRevenue;
-            var anyRevenue = db.Questions.Select(m => m.box.boxPrice).FirstOrDefault();
+            var anyRevenue = db.Questions.Select(m => m.box.boxPrice).FirstOrDefault();       //AND isSubscribed = true;
             if (anyRevenue != 0)
             {
-                monthlyRevenue = db.Questions.Select(m => m.box.boxPrice).Sum();
+                monthlyRevenue = db.Questions.Where(n => n.isSubscribed == true).Select(m => m.box.boxPrice).Sum();
             }
             else monthlyRevenue = 0;
             return monthlyRevenue;

@@ -153,7 +153,7 @@ namespace Crafty.Controllers
                     }
                 }
 
-
+                //AdminPage: 2 subscribers, but 3 Beer Subscribers ********************** FIX THIS
 
 
                 //int count = db.RegisteredUsers.Count(); Entity Framewor
