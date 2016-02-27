@@ -22,14 +22,13 @@ namespace Crafty.Controllers
             {
                 numberOfTotalAccounts = getNumberOfTotalAccounts(),
                 numberOfPayingAccounts = getNumberOfPayingAccounts(),      //aaaaaaa what if complete survey but don't subscribe? have in survey a bool for whether paying or not? Workaround: Change button at bottom of survey page to say "subscribe"....
-                numberOfHardLiquorAccounts = db.Questions.Where(h => h.box.boxName == "Hard liquor box").Count(),
-                numberOfBeerAccounts = db.Questions.Where(b => b.box.boxName == "Beer box").Count(),
+                numberOfHardLiquorAccounts = db.Questions.Where(h => h.box.boxName == "Hard Liquor Box").Count(),
+                numberOfBeerAccounts = db.Questions.Where(b => b.box.boxName == "Beer Box").Count(),
 
                 monthlyRevenue = getMonthlyRevenue(),
 
-                percentHardLiqourAccounts = db.Questions.Where(h => h.box.boxName == "Hard liquor box").Count() / getNumberOfPayingAccounts(),
-                percentBeerAccounts = db.Questions.Where(b => b.box.boxName == "Beer box").Count() / getNumberOfPayingAccounts(),
-                percentWineAccounts = db.Questions.Where(w => w.box.boxName == "Wine box").Count() / getNumberOfPayingAccounts(),
+                percentHardLiqourAccounts = db.Questions.Where(h => h.box.boxName == "Hard Liquor Box").Count() / getNumberOfPayingAccounts(),
+                percentBeerAccounts = db.Questions.Where(b => b.box.boxName == "Beer Box").Count() / getNumberOfPayingAccounts(),
             };
             return View(model);
         }
