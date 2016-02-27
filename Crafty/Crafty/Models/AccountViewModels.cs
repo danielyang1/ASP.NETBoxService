@@ -81,14 +81,25 @@ namespace Crafty.Models
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
 
-        public int zipCode { get; set; }
+        [Required]
+        public string StreetAddress { get; set; }
+
+        [Required]
+        public string City { get; set; }
+
+        [Required]
+        public string State { get; set; }
+
+        [Required]
+        [RegularExpression(@"^\d{5}(-\d{4})?$", ErrorMessage = "Invalid ZipCode")]
+        public string ZipCode { get; set; }
     }
 
     public class SurveyViewModel
     {
         [Required]
         [Display(Name = "First Question")]
-        [StringLength(100, ErrorMessage = "You need to submit something lalalalala.", MinimumLength = 6)]
+        [StringLength(100, ErrorMessage = "You need to submit something.", MinimumLength = 6)]
         public int FirstQuestion { get; set; }
     }
 
