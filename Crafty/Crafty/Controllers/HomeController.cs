@@ -27,7 +27,7 @@ namespace Crafty.Controllers
             return View();
         }
 
-        public ActionResult Survey()       //add pages here...steps: Create method, then right click inside method and choose Add View --> Leave defaults, click Okay
+        public ActionResult Survey()
         {
             ViewBag.Message = "Survey page.";
 

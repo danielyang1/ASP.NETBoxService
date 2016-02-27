@@ -66,7 +66,7 @@ namespace Crafty.Controllers
                 : message == ManageMessageId.RemovePhoneSuccess ? "Your phone number was removed."
                 : "";
 
-            var userId = User.Identity.GetUserId();            //this is causing an error
+            var userId = User.Identity.GetUserId();
             var model = new IndexViewModel
             {
                 product = getProduct(),
@@ -128,9 +128,7 @@ namespace Crafty.Controllers
                 //Logins = await UserManager.GetLoginsAsync(userId),
                 //BrowserRemembered = await AuthenticationManager.TwoFactorBrowserRememberedAsync(userId)
             };
-            // RedirectToAction("Home", "Home");
-            //return RedirectToAction("Survey", "ThankYou");
-           // return View(model);
+
             return View(model);
         }
 
@@ -384,7 +382,7 @@ namespace Crafty.Controllers
             }
         }
 
-        private string getUserID()                                              //get userID
+        private string getUserID()
         {
             string userID = User.Identity.GetUserId();
             return userID;
@@ -447,7 +445,7 @@ namespace Crafty.Controllers
 
         private bool HasPassword()
         {
-            var user = UserManager.FindById(User.Identity.GetUserId());             //this is causing an error
+            var user = UserManager.FindById(User.Identity.GetUserId());
             if (user != null)
             {
                 return user.PasswordHash != null;

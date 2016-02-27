@@ -71,8 +71,6 @@ namespace Crafty.Controllers
             return monthlyRevenue;
         }
 
-
-
         // GET: Admins/Details/5
 
         protected override void Dispose(bool disposing)

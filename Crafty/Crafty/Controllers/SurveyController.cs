@@ -65,6 +65,10 @@ namespace Crafty.Controllers
         public ActionResult Create([Bind(Include = "ID,question1,question2,question3,question4,question5,question6,question7,question8,sum")] Survey survey)
         {
 
+            //CANCEL SUBSCRIPTION OPTION?
+            //ADDRESS FIELDS?
+            //ZIP CODE SHOULD BE 5-DIGIT NUMBER?
+
             if (ModelState.IsValid)
             {
                 survey.sum = survey.question2 + survey.question4 + survey.question6 + survey.question7 + survey.question8;

@@ -17,10 +17,8 @@ namespace Crafty.Models
         public int question6 { get; set; }
         public int question7 { get; set; }
         public int question8 { get; set; }
-        //RegisteredUser user { get; set; }
         public string userID { get; set; }
         public int sum { get; set; }
-     //   public string productDemographic { get; set; }     
         public Box box { get; set; }
         public bool isSubscribed { get; set; }
     }
