@@ -246,8 +246,6 @@ namespace Crafty.Controllers
             string userID = User.Identity.GetUserId();
 
 
-            //var user = db.Questions.Where(y => y.userID == userID);
-            //var user.isSubscribed = true;
 
             var user =
     (from c in db.Questions
@@ -257,19 +255,6 @@ namespace Crafty.Controllers
             user.isSubscribed = true;
 
             db.SaveChanges();
-
-            //var
-            //if (hasUserAlreadyTakenSurvey != null)
-            //{
-            //    product = db.Questions.Select(y => y).Where(u => u.userID == userID).Select(m => m.box.boxName).Single();
-            //}
-            //else product = null;
-            ////return product;
-
-            //survey.isSubscribed = true;
-            //db.Questions.Add(survey);
-            //db.SaveChanges();
-            //  return Redirect("~/Home/");
             return View();
         }
 

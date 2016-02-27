@@ -21,7 +21,7 @@ namespace Crafty.Controllers
             var model = new AdminModel
             {
                 numberOfTotalAccounts = getNumberOfTotalAccounts(),
-                numberOfPayingAccounts = getNumberOfPayingAccounts(),      //aaaaaaa what if complete survey but don't subscribe? have in survey a bool for whether paying or not? Workaround: Change button at bottom of survey page to say "subscribe"....
+                numberOfPayingAccounts = getNumberOfPayingAccounts(),
                 numberOfHardLiquorAccounts = db.Questions.Where(h => h.box.boxName == "Hard Liquor Box").Count(),
                 numberOfBeerAccounts = db.Questions.Where(b => b.box.boxName == "Beer Box").Count(),
 
@@ -34,7 +34,7 @@ namespace Crafty.Controllers
         }
 
 
-        private double? getNumberOfTotalAccounts()
+        private double? getNumberOfTotalAccounts()        //THIS SHOULD NOT INCLUDE ADMIN?
         {
             double? numberOfTotalAccounts;
             var isDatabaseEmpty = db.Questions.Select(y => y).FirstOrDefault();
@@ -46,13 +46,13 @@ namespace Crafty.Controllers
             return numberOfTotalAccounts;
         }
 
-        private double? getNumberOfPayingAccounts()
+        private double? getNumberOfPayingAccounts()      //THIS SHOULD ONLY INCLUDE PAYING "TRUE" SUBSCRIBERS
         {
             double? numberOfPayingAccounts;
             var isDatabaseEmpty = db.Questions.Select(y => y).FirstOrDefault();
             if (isDatabaseEmpty != null)
             {
-                numberOfPayingAccounts = db.Questions.Count();
+                numberOfPayingAccounts = db.Questions.Select(y => y).Where(c => c.isSubscribed == true).Count();
             }
             else numberOfPayingAccounts = 0;
             return numberOfPayingAccounts;
