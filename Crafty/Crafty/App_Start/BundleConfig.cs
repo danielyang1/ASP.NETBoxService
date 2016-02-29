@@ -24,8 +24,8 @@ namespace Crafty
                       "~/Scripts/respond.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                                  "~/Content/darkly.bootstrap.css",
+                                  "~/Content/site.css"));
         }
     }
 }

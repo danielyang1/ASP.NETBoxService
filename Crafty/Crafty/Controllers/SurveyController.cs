@@ -59,8 +59,6 @@ namespace Crafty.Controllers
         {
 
             //CANCEL SUBSCRIPTION OPTION?
-            //ADDRESS FIELDS?
-            //ZIP CODE SHOULD BE 5-DIGIT NUMBER?
 
             if (ModelState.IsValid)
             {
