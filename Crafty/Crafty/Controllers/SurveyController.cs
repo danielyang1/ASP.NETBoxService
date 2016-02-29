@@ -177,7 +177,33 @@ namespace Crafty.Controllers
                         }
                         else
                         {
-                            hardLiquorBox.boxContents = new List<AlcoholProduct>() { new Rum("Malibu Rum"), new Rum("Cuban") };
+                            hardLiquorBox.boxContents = new List<AlcoholProduct>() { new Rum("Malibu Rum"), new Rum("Cuban Rum") };
+                            survey.box = hardLiquorBox;
+                        }
+                    }
+                    if (survey.question5 == 9)
+                    {
+                        if (rando == 0)
+                        {
+                            hardLiquorBox.boxContents = new List<AlcoholProduct>() { new Tequila("Patron Silver"), new Tequila("Cabo Wabo") };
+                            survey.box = hardLiquorBox;
+                        }
+                        else
+                        {
+                            hardLiquorBox.boxContents = new List<AlcoholProduct>() { new Tequila("Don Julio"), new Tequila("Jose Cuervo") };
+                            survey.box = hardLiquorBox;
+                        }
+                    }
+                    if (survey.question5 == 10)
+                    {
+                        if (rando == 0)
+                        {
+                            hardLiquorBox.boxContents = new List<AlcoholProduct>() { new Vodka("Grey Goose"), new Vodka("Absolut") };
+                            survey.box = hardLiquorBox;
+                        }
+                        else
+                        {
+                            hardLiquorBox.boxContents = new List<AlcoholProduct>() { new Vodka("Belvedere Vodka"), new Vodka("Ciroc Peach Vodka") };
                             survey.box = hardLiquorBox;
                         }
                     }
