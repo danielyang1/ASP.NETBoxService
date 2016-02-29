@@ -12,7 +12,7 @@
     <div>
         @*To edit this page, also edit ManageViewModel and ManageController*@
         @{
-            if (Model.product == null)
+            if (Model.product == null || Model.isSubscribed != true)
             {
                 <br />
                 <h4><a href="/Survey/Create">Complete a survey</a> to begin receiving monthly liquor boxes.</h4>
@@ -30,12 +30,10 @@
 
                 <br />
                 <br />
-                if (Model.isSubscribed == true)
-                {
                     <div>
                         <input type="submit" class="btn btn-success" value="Cancel subscription" />
                     </div>
-                }
+                
 
             }
         }
