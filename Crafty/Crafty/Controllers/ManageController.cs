@@ -450,11 +450,14 @@ namespace Crafty.Controllers
 
         public bool isSubscribed()
         {
+            bool isSubscribed = false;
             RegisteredUserDBContext db = new RegisteredUserDBContext();
             string userID = User.Identity.GetUserId();
-            var user = db.Questions.Where(c => c.userID == userID).Select(c => c).First();
-
-            bool isSubscribed = user.isSubscribed;
+            var user = db.Questions.Where(c => c.userID == userID).Select(c => c).FirstOrDefault();
+            if (user != null)
+            {
+                isSubscribed = user.isSubscribed;
+            }
             return isSubscribed;
         }
 
