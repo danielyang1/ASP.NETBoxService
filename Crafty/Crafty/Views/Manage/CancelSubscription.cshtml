@@ -1,0 +1,17 @@
+﻿@model Crafty.Models.IndexViewModel
+@{
+    ViewBag.Title = "CancelSubscription";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("Index", "Home"))
+{
+
+    <h3>We're sorry to see you go :(</h3>
+
+    <div>
+        <input type="submit" value="Return Home" class="btn btn-success" />
+    </div>
+
+}
+
