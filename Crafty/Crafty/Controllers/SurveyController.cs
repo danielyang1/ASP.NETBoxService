@@ -85,47 +85,120 @@ namespace Crafty.Controllers
                 survey.box = survey.sum < 30 ? beerBox : hardLiquorBox;
 
                 survey.isSubscribed = false;
+                Random randNum = new Random();
+                int rando = randNum.Next(2);
 
-                if(survey.sum <30)
+                if (survey.sum < 30)
                 {
-                    switch (survey.question1)
+                    if (survey.question1 == 1)
                     {
-                        case 1:
+                        if (rando == 0)
+                        {
                             beerBox.boxContents = new List<AlcoholProduct>() { new IPA("Green Flash West Coast"), new IPA("Rebel Rouser IPA") };
                             survey.box = beerBox;
-                            break;
-                        case 2:
+                        }
+                        else
+                        {
+                            beerBox.boxContents = new List<AlcoholProduct>() { new IPA("Ten Hills Pale Ale"), new IPA("Blue Moon") };
+                            survey.box = beerBox;
+                        }
+                    }
+                    if (survey.question1 == 2)
+                    {
+                        if (rando == 0)
+                        {
                             beerBox.boxContents = new List<AlcoholProduct>() { new Stout("Guinness Extra Stout"), new Stout("Breckenridge Stout") };
                             survey.box = beerBox;
-                            break;
-                        case 3:
+                        }
+                        else
+                        {
+                            beerBox.boxContents = new List<AlcoholProduct>() { new IPA("Bourbon Barrel Aged Stout"), new IPA("Hill Farmstead Earl Stout") };
+                            survey.box = beerBox;
+                        }
+                    }
+                    if (survey.question1 == 3)
+                    {
+                        if (rando == 0)
+                        {
                             beerBox.boxContents = new List<AlcoholProduct>() { new Lager("Pre-Prohibition Style Lager"), new Lager("Samuel Adam's Botson Lager") };
                             survey.box = beerBox;
-                            break;
-                        case 4:
+                        }
+                        else
+                        {
+                            beerBox.boxContents = new List<AlcoholProduct>() { new IPA("Tornado Brewing Company Lemon Pepper Lager"), new IPA("Samuel Adams Double Agent IPL") };
+                            survey.box = beerBox;
+                        }
+                    }
+                    if (survey.question1 == 4)
+                    {
+                        if (rando == 0)
+                        {
                             beerBox.boxContents = new List<AlcoholProduct>() { new Specialty("Hornsby’s Hard Cider"), new Specialty("Sprecher's Hard Root Beer") };
                             survey.box = beerBox;
-                            break;
+                        }
+                        else
+                        {
+                            beerBox.boxContents = new List<AlcoholProduct>() { new IPA("Copper John Scotch Ale"), new IPA("Suicide Squeeze IPA") };
+                            survey.box = beerBox;
+                        }
                     }
                 }
+
+                //if(survey.sum <30)
+                //{
+                //    switch (survey.question1)
+                //    {
+                //        case 1:
+                //            beerBox.boxContents = new List<AlcoholProduct>() { new IPA("Green Flash West Coast"), new IPA("Rebel Rouser IPA") };
+                //            survey.box = beerBox;
+                //            break;
+                //        case 2:
+                //            beerBox.boxContents = new List<AlcoholProduct>() { new Stout("Guinness Extra Stout"), new Stout("Breckenridge Stout") };
+                //            survey.box = beerBox;
+                //            break;
+                //        case 3:
+                //            beerBox.boxContents = new List<AlcoholProduct>() { new Lager("Pre-Prohibition Style Lager"), new Lager("Samuel Adam's Botson Lager") };
+                //            survey.box = beerBox;
+                //            break;
+                //        case 4:
+                //            beerBox.boxContents = new List<AlcoholProduct>() { new Specialty("Hornsby’s Hard Cider"), new Specialty("Sprecher's Hard Root Beer") };
+                //            survey.box = beerBox;
+                //            break;
+                //    }
+                //}
                 if (survey.sum >= 30)
                 {
-                    switch (survey.question5)
+                    if (survey.question5 == 8)
                     {
-                        case 8:
+                        if (rando == 0)
+                        {
                             hardLiquorBox.boxContents = new List<AlcoholProduct>() { new Rum("Bacardi 151"), new Rum("Captain Morgan") };
                             survey.box = hardLiquorBox;
-                            break;
-                        case 9:
-                            hardLiquorBox.boxContents = new List<AlcoholProduct>() { new Tequila("Patron Silver"), new Tequila("Cabo Wabo") };
+                        }
+                        else
+                        {
+                            hardLiquorBox.boxContents = new List<AlcoholProduct>() { new Rum("Malibu Rum"), new Rum("Cuban") };
                             survey.box = hardLiquorBox;
-                            break;
-                        case 10:
-                            hardLiquorBox.boxContents = new List<AlcoholProduct>() { new Vodka("Grey Goose"), new Vodka("Absolut") };
-                            survey.box = hardLiquorBox;
-                            break;
+                        }
                     }
                 }
+                //        {
+                //    switch (survey.question5)
+                //    {
+                //        case 8:
+                //            hardLiquorBox.boxContents = new List<AlcoholProduct>() { new Rum("Bacardi 151"), new Rum("Captain Morgan") };
+                //            survey.box = hardLiquorBox;
+                //            break;
+                //        case 9:
+                //            hardLiquorBox.boxContents = new List<AlcoholProduct>() { new Tequila("Patron Silver"), new Tequila("Cabo Wabo") };
+                //            survey.box = hardLiquorBox;
+                //            break;
+                //        case 10:
+                //            hardLiquorBox.boxContents = new List<AlcoholProduct>() { new Vodka("Grey Goose"), new Vodka("Absolut") };
+                //            survey.box = hardLiquorBox;
+                //            break;
+                //    }
+                //}
 
                 db.Questions.Add(survey);
                 db.SaveChanges();
