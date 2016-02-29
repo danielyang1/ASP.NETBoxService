@@ -143,36 +143,13 @@ namespace Crafty.Controllers
                         }
                     }
                 }
-
-                //if(survey.sum <30)
-                //{
-                //    switch (survey.question1)
-                //    {
-                //        case 1:
-                //            beerBox.boxContents = new List<AlcoholProduct>() { new IPA("Green Flash West Coast"), new IPA("Rebel Rouser IPA") };
-                //            survey.box = beerBox;
-                //            break;
-                //        case 2:
-                //            beerBox.boxContents = new List<AlcoholProduct>() { new Stout("Guinness Extra Stout"), new Stout("Breckenridge Stout") };
-                //            survey.box = beerBox;
-                //            break;
-                //        case 3:
-                //            beerBox.boxContents = new List<AlcoholProduct>() { new Lager("Pre-Prohibition Style Lager"), new Lager("Samuel Adam's Botson Lager") };
-                //            survey.box = beerBox;
-                //            break;
-                //        case 4:
-                //            beerBox.boxContents = new List<AlcoholProduct>() { new Specialty("Hornsby’s Hard Cider"), new Specialty("Sprecher's Hard Root Beer") };
-                //            survey.box = beerBox;
-                //            break;
-                //    }
-                //}
                 if (survey.sum >= 30)
                 {
                     if (survey.question5 == 8)
                     {
                         if (rando == 0)
                         {
-                            hardLiquorBox.boxContents = new List<AlcoholProduct>() { new Rum("Bacardi 151"), new Rum("Captain Morgan") };
+                            hardLiquorBox.boxContents = new List<AlcoholProduct>() { new Rum("Bacardi 151 Rum"), new Rum("Captain Morgan Rum") };
                             survey.box = hardLiquorBox;
                         }
                         else
@@ -185,12 +162,12 @@ namespace Crafty.Controllers
                     {
                         if (rando == 0)
                         {
-                            hardLiquorBox.boxContents = new List<AlcoholProduct>() { new Tequila("Patron Silver"), new Tequila("Cabo Wabo") };
+                            hardLiquorBox.boxContents = new List<AlcoholProduct>() { new Tequila("Patron Silver Tequila"), new Tequila("Cabo Wabo Tequila") };
                             survey.box = hardLiquorBox;
                         }
                         else
                         {
-                            hardLiquorBox.boxContents = new List<AlcoholProduct>() { new Tequila("Don Julio"), new Tequila("Jose Cuervo") };
+                            hardLiquorBox.boxContents = new List<AlcoholProduct>() { new Tequila("Don Julio Tequila"), new Tequila("Jose Cuervo Tequila") };
                             survey.box = hardLiquorBox;
                         }
                     }
@@ -198,7 +175,7 @@ namespace Crafty.Controllers
                     {
                         if (rando == 0)
                         {
-                            hardLiquorBox.boxContents = new List<AlcoholProduct>() { new Vodka("Grey Goose"), new Vodka("Absolut") };
+                            hardLiquorBox.boxContents = new List<AlcoholProduct>() { new Vodka("Grey Goose Vodka"), new Vodka("Absolut Vodka") };
                             survey.box = hardLiquorBox;
                         }
                         else
@@ -208,24 +185,6 @@ namespace Crafty.Controllers
                         }
                     }
                 }
-                //        {
-                //    switch (survey.question5)
-                //    {
-                //        case 8:
-                //            hardLiquorBox.boxContents = new List<AlcoholProduct>() { new Rum("Bacardi 151"), new Rum("Captain Morgan") };
-                //            survey.box = hardLiquorBox;
-                //            break;
-                //        case 9:
-                //            hardLiquorBox.boxContents = new List<AlcoholProduct>() { new Tequila("Patron Silver"), new Tequila("Cabo Wabo") };
-                //            survey.box = hardLiquorBox;
-                //            break;
-                //        case 10:
-                //            hardLiquorBox.boxContents = new List<AlcoholProduct>() { new Vodka("Grey Goose"), new Vodka("Absolut") };
-                //            survey.box = hardLiquorBox;
-                //            break;
-                //    }
-                //}
-
                 db.Questions.Add(survey);
                 db.SaveChanges();
                 return Redirect("~/Manage/Purchase");
