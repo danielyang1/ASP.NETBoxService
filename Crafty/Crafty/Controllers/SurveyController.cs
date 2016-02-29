@@ -21,16 +21,9 @@ namespace Crafty.Controllers
 
         // GET: Survey
         public ActionResult Index()
-        {
-            double numberOfTotalAccounts = adb.Users.Count();
-            double numberOfPayingAccounts = db.Questions.Count();
-            double numberOfHardLiquorAccounts = db.Questions.Where(h => h.box.boxName == "Hard Liquor Box").Count();
-            double numberOfBeerAccounts = db.Questions.Where(b => b.box.boxName == "Beer Box").Count();
+        {      
 
-            double monthlyRevenue = db.Questions.Select(m => m.box.boxPrice).Sum();
-
-            double percentHardLiqourAccounts = numberOfHardLiquorAccounts / numberOfTotalAccounts;
-            double percentBeerAccounts = numberOfBeerAccounts / numberOfTotalAccounts;
+            //commit: changed adminsController query functions
 
             return View(db.Questions.ToList());
         }

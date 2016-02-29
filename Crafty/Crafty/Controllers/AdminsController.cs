@@ -37,31 +37,29 @@ namespace Crafty.Controllers
 
         private double? getNumberOfTotalAccounts()        //should this count include admin? if no, then -1
         {
-            double? numberOfTotalAccounts;
+            double? numberOfTotalAccounts = 0;
             var isDatabaseEmpty = adb.Users.Select(y => y).FirstOrDefault();
             if (isDatabaseEmpty != null)
             {
                 numberOfTotalAccounts = adb.Users.Count();
             }
-            else numberOfTotalAccounts = 0;
             return numberOfTotalAccounts;
         }
 
         private double? getNumberOfPayingAccounts()     
         {
-            double? numberOfPayingAccounts;
+            double? numberOfPayingAccounts = 0;
             var isDatabaseEmpty = db.Questions.Select(y => y).FirstOrDefault();
             if (isDatabaseEmpty != null)
             {
                 numberOfPayingAccounts = db.Questions.Select(y => y).Where(c => c.isSubscribed == true).Count();
             }
-            else numberOfPayingAccounts = 0;
             return numberOfPayingAccounts;
         }
 
         private double? getMonthlyRevenue()
         {
-            double? monthlyRevenue;
+            double? monthlyRevenue = 0;
             var anyRevenue = db.Questions.Select(m => m.box.boxPrice).FirstOrDefault();
             if (anyRevenue != 0)
             {

@@ -119,14 +119,9 @@ namespace Crafty.Controllers
             {
                 product = getProduct(),
                 contentNames = getNamesofBoxContents(),
-                //boxName = getBoxName(),
                 boxPrice = getBoxPrice(),
                 userID = getUserID(),
                 HasPassword = HasPassword(),
-                //PhoneNumber = await UserManager.GetPhoneNumberAsync(userId),
-                //TwoFactor = await UserManager.GetTwoFactorEnabledAsync(userId),
-                //Logins = await UserManager.GetLoginsAsync(userId),
-                //BrowserRemembered = await AuthenticationManager.TwoFactorBrowserRememberedAsync(userId)
             };
 
             return View(model);
@@ -424,7 +419,6 @@ namespace Crafty.Controllers
         {
             string userID = getUserID();
             RegisteredUserDBContext db = new RegisteredUserDBContext();
-
             List<string> listOfProductNames = new List<string>();
 
             var hasUserAlreadyTakenSurvey = db.Questions.Where(y => y.userID == userID).FirstOrDefault();
@@ -439,9 +433,7 @@ namespace Crafty.Controllers
                 }
             }
             return listOfProductNames;
-
         }
-
 
         private bool HasPassword()
         {

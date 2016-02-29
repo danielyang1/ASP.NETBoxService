@@ -3,7 +3,7 @@
     <h1>Administration</h1>
 
     <h3>This is our administration page!</h3>
-   <%-- <table>
+   <%-- <table> Can this page be deleted?
         <tr>
             <td><asp:Label ID="LabelAddCategory" runat="server">Category:</asp:Label></td>
             <td>
