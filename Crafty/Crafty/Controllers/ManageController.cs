@@ -73,6 +73,7 @@ namespace Crafty.Controllers
                 contentNames = getNamesofBoxContents(),
                 boxPrice = getBoxPrice(),
                 userID = getUserID(),
+                isSubscribed = isSubscribed(),
                 HasPassword = HasPassword(),
                 PhoneNumber = await UserManager.GetPhoneNumberAsync(userId),
                 TwoFactor = await UserManager.GetTwoFactorEnabledAsync(userId),
@@ -125,6 +126,18 @@ namespace Crafty.Controllers
             };
 
             return View(model);
+        }
+
+        public ActionResult CancelSubscription()
+        {
+            RegisteredUserDBContext db = new RegisteredUserDBContext();
+
+            string userID = User.Identity.GetUserId();
+            var user = db.Questions.Where(c => c.userID == userID).Select(c => c).First();
+            user.isSubscribed = false;
+
+            db.SaveChanges();
+            return View();
         }
 
         public ActionResult ThankYou()
@@ -433,6 +446,16 @@ namespace Crafty.Controllers
                 }
             }
             return listOfProductNames;
+        }
+
+        public bool isSubscribed()
+        {
+            RegisteredUserDBContext db = new RegisteredUserDBContext();
+            string userID = User.Identity.GetUserId();
+            var user = db.Questions.Where(c => c.userID == userID).Select(c => c).First();
+
+            bool isSubscribed = user.isSubscribed;
+            return isSubscribed;
         }
 
         private bool HasPassword()

@@ -338,6 +338,7 @@
     <Content Include="Views\Admins\Index.cshtml" />
     <Content Include="Views\Manage\Purchase.cshtml" />
     <Content Include="Views\Survey\ThankYou.cshtml" />
+    <Content Include="Views\Manage\CancelSubscription.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
