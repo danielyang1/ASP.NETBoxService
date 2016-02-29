@@ -9,21 +9,21 @@
 <div>
     <br />
     @{
-        <h4>Total site accounts: @Model.numberOfTotalAccounts</h4>
-        <h4>Total subscribers: @Model.numberOfPayingAccounts</h4>
-        <h4>Total beer monthly subscribers: @Model.numberOfBeerAccounts</h4>
-        <h4>Total hard monthly liquor subscribers: @Model.numberOfHardLiquorAccounts</h4>
+        <h4>Total Site Accounts: @Model.numberOfTotalAccounts</h4>
+        <h4>Total Subscribers: @Model.numberOfPayingAccounts</h4>
+        <h4>Total Beer monthly Subscribers: @Model.numberOfBeerAccounts</h4>
+        <h4>Total Hard Liquor Subscribers: @Model.numberOfHardLiquorAccounts</h4>
         <br />
 
         if(Model.numberOfPayingAccounts == 0)
         {
-            <h4>Percent beer suscribers:</h4>
-            <h4>Percent hard liquor subscribers: </h4>
+            <h4>Percent Beer Subscribers:</h4>
+            <h4>Percent Hard Liquor Subscribers: </h4>
         }
         else
         {
-            <h4>Percent beer subscribers: @Math.Round((double)Model.percentBeerAccounts, 2)</h4>
-            <h4>Percent hard liquor subscribers: @Math.Round((double)Model.percentHardLiqourAccounts, 2)</h4>
+            <h4>Percent Beer Subscribers: @Math.Round((double)Model.percentBeerAccounts, 2)</h4>
+            <h4>Percent Hard Liquor Subscribers: @Math.Round((double)Model.percentHardLiqourAccounts, 2)</h4>
         }
 
         <br />
