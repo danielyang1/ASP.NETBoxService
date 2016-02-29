@@ -13,7 +13,7 @@ namespace Crafty.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201602291639211_migration2"; }
+            get { return "201602291721514_migration2"; }
         }
         
         string IMigrationMetadata.Source

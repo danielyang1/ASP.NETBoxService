@@ -217,9 +217,9 @@
     <Compile Include="MasterPage.Master.designer.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201602291639211_migration2.cs" />
-    <Compile Include="Migrations\201602291639211_migration2.Designer.cs">
-      <DependentUpon>201602291639211_migration2.cs</DependentUpon>
+    <Compile Include="Migrations\201602291721514_migration2.cs" />
+    <Compile Include="Migrations\201602291721514_migration2.Designer.cs">
+      <DependentUpon>201602291721514_migration2.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -335,12 +335,12 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
+    <EmbeddedResource Include="Migrations\201602291721514_migration2.resx">
+      <DependentUpon>201602291721514_migration2.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201602291639211_migration2.resx">
-      <DependentUpon>201602291639211_migration2.cs</DependentUpon>
-    </EmbeddedResource>
+    <Folder Include="App_Data\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
