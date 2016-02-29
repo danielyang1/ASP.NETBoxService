@@ -63,7 +63,12 @@ namespace Crafty.Controllers
             var anyRevenue = db.Questions.Select(m => m.box.boxPrice).FirstOrDefault();
             if (anyRevenue != 0)
             {
-                monthlyRevenue = db.Questions.Where(n => n.isSubscribed == true).Select(m => m.box.boxPrice).Sum();
+                var mr = db.Questions.Where(n => n.isSubscribed == true).Select(m => (double?)m.box.boxPrice).FirstOrDefault();
+                if (mr != null)
+                {
+                    monthlyRevenue = db.Questions.Where(n => n.isSubscribed == true).Select(m => m.box.boxPrice).Sum();
+
+                }
             }
             else monthlyRevenue = 0;
             return monthlyRevenue;

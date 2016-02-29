@@ -101,7 +101,7 @@ namespace Crafty.Controllers
                             survey.box = beerBox;
                             break;
                         case 3:
-                            beerBox.boxContents = new List<AlcoholProduct>() { new Lager("Bootlegger's Palomino Pale Ale"), new Lager("Samuel Adam's Botson Lager") };
+                            beerBox.boxContents = new List<AlcoholProduct>() { new Lager("Pre-Prohibition Style Lager"), new Lager("Samuel Adam's Botson Lager") };
                             survey.box = beerBox;
                             break;
                         case 4:
