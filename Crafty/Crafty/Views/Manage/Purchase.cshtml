@@ -4,7 +4,6 @@
 }
 <h2>@ViewBag.Title</h2>
 <p class="text-success">@ViewBag.StatusMessage</p>
-@*@using (Html.BeginForm("ThankYou", "Survey"))*@
 @Html.AntiForgeryToken()
 
 <table class="table">
@@ -42,9 +41,10 @@
                 <input type="hidden" name="button_subtype" value="services">
                 <input type="hidden" name="tax_rate" value="5.600">
                 <input type="hidden" name="shipping" value="1.95">
-                <input type="hidden" name="return" value="http://localhost:54155/Home">
-                <input type="hidden" name="cbt" value="Return to BoozeBox.com" src="http://localhost:54155/Home">
+                <input type="hidden" name="return" value="http://localhost:54155/Survey/ThankYou">
+                <input type="hidden" name="cbt" value="Return to BoozeBox.com" src="http://localhost:54155/Survey/ThankYou">
                 <input type="hidden" name="bn" value="PP-BuyNowBF:btn_buynowCC_LG.gif:NonHosted">
+                <input type="hidden" class="btn btn-default" />
                 <input type="image" src="https://www.sandbox.paypal.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
                 <img alt="" border="0" src="https://www.sandbox.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
             </form>
